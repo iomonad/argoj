@@ -1,4 +1,4 @@
-# argoj
+# argoj [![Clojure CI](https://github.com/iomonad/argoj/actions/workflows/clojure.yml/badge.svg)](https://github.com/iomonad/argoj/actions/workflows/clojure.yml)
 
 > Data-Oriented, pure Clojure API wrapper for Argo Workflow
 
