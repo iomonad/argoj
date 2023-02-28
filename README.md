@@ -1,5 +1,13 @@
 # argoj [![Clojure CI](https://github.com/iomonad/argoj/actions/workflows/clojure.yml/badge.svg)](https://github.com/iomonad/argoj/actions/workflows/clojure.yml) [![Clojars Project](https://img.shields.io/clojars/v/io.trosa/argoj.svg)](https://clojars.org/io.trosa/argoj)
-> Data-Oriented, pure Clojure API wrapper for Argo Workflow
+
+<a href="https://github.com/iomonad/argoj"><img
+  src="https://argoproj.github.io/argo-workflows/assets/logo.png"
+  height="180" align="right"></a>
+
+
+## Abstract
+
+> Data-Oriented, pure Clojure API wrapper for Argo Workflow, an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.
 
 ## License
 
