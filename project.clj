@@ -15,7 +15,7 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [clj-http            "3.12.3"]
                  [cheshire            "5.11.0"]]
-  :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "0.3.1"]]
+  :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "1.4.2"]]
                    :source-paths   ["dev"]
                    :resource-paths ["dev-resources"]}
              :repl-options {:init-ns user}}
