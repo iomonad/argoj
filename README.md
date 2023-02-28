@@ -9,6 +9,14 @@
 
 > Data-Oriented, pure Clojure API wrapper for Argo Workflow, an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.
 
+## API Usage
+
+## Testing
+
+```bash
+lein test
+```
+
 ## License
 
 Copyright © 2023 iomonad <iomonad@riseup.net>
