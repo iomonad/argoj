@@ -30,7 +30,7 @@ jobs:
       run: lein marg -d public -f index.html
 
     - name: Deploy documentation to Github Pages
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      uses: JamesIves/github-pages-deploy-action@v4.4.1
       if: github.ref == 'refs/heads/master'
       with:
         branch: gh-pages
