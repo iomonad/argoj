@@ -1,4 +1,4 @@
-g(ns argo-workflows-api.api.archived-workflow-service
+(ns argo-workflows-api.api.archived-workflow-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))
 
