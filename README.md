@@ -9,6 +9,14 @@
 
 > Data-Oriented, pure Clojure API wrapper for Argo Workflow, an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.
 
+## OpenAPI Stub
+
+Generate OpenAPI stubs for latest version with script:
+
+```bash
+/bin/zsh bin/openapi-generate
+```
+
 ## API Usage
 
 ## Testing

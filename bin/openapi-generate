@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+wget https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.1/swagger-codegen-cli-2.2.1.jar -O swagger-codegen-cli.jar
+curl -k $1 > argo-openapi.json
+java -jar swagger-codegen-cli.jar generate -i openapi.json -l clojure -o . -c clojure-config.json
