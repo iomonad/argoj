@@ -314,4 +314,3 @@
   ([namespace name ] (workflow-service-workflow-logs namespace name nil))
   ([namespace name optional-params]
    (:data (workflow-service-workflow-logs-with-http-info namespace name optional-params))))
-
