@@ -1,7 +1,9 @@
 (ns argo-workflows-api.core
   (:require [cheshire.core :refer [generate-string parse-string]]
             [clojure.string :as str]
-            [clj-http.client :as client])
+            [clj-http.client :as client]
+            [clojure.spec.alpha :as s]
+            [argoj.specs :as as])
   (:import (com.fasterxml.jackson.core JsonParseException)
            (java.io File)
            (java.util Date TimeZone)
@@ -29,6 +31,9 @@
          api-context# (-> *api-context*
                           (merge api-context#)
                           (assoc :auths (merge (:auths *api-context*) (:auths api-context#))))]
+     (when-not (s/valid? ::as/context api-context#)
+       (throw (ex-info "Argo Context Spec Exception"
+                       {:error (s/explain-str ::as/context api-context#)})))
      (binding [*api-context* api-context#]
        ~@body)))
 
