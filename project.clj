@@ -12,9 +12,10 @@
                                       :password :env/clojars_password
                                       :sign-releases false}]]
   :plugins [[lein-marginalia "0.9.1"]]
-  :dependencies [[org.clojure/clojure "1.11.1"]
-                 [clj-http            "3.12.3"]
-                 [cheshire            "5.11.0"]]
+  :dependencies [[org.clojure/clojure       "1.11.1"]
+                 [clj-http                  "3.12.3"]
+                 [cheshire                  "5.11.0"]
+                 [org.clojure/tools.logging "1.2.4"]]
   :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "1.4.2"]]
                    :source-paths   ["dev"]
                    :resource-paths ["dev-resources"]}

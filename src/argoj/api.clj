@@ -1,10 +1,16 @@
 (ns argoj.api
   (:require [argo-workflows-api.core :refer [with-api-context]]
-            [argo-workflows-api.api.workflow-service :as workflow]))
+            [argo-workflows-api.api.workflow-service :as workflow]
+            [clojure.tools.logging :as log]))
 
 ;;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ;;              API
 ;;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+;;; Helpers
+
+(defn- coerce-ns [ns]
+  (if (empty? ns) :all ns))
 
 ;;; Workflow
 
@@ -17,7 +23,23 @@
    (with-api-context spec
      (let [{:keys [items] :as results}
            (workflow/workflow-service-list-workflows ns)]
-       (assoc results :total (count items))))))
+       (assoc results
+              :total (count items)
+              :namespace (coerce-ns ns))))))
+
+
+(defn workflows-overview
+  "Return a quick overview of running workflows"
+  {:added "0.1.0"}
+  ([spec] (workflows-overview spec (str)))
+  ([spec ns]
+   (let [{:keys [items]} (list-workflows spec ns)]
+     {:workflows (->> items
+                      (map (fn [{:keys [metadata spec status]}]
+                             (-> (select-keys metadata [:name])
+                                 (merge (select-keys status [:startedAt :phase]))))))
+      :namespace (coerce-ns ns)
+      :total (count items)})))
 
 
 (defn create-workflow
@@ -35,7 +57,26 @@
    (delete-workflow spec (str) workflow-name))
   ([spec ns workflow-name]
    (with-api-context spec
-     (workflow/workflow-service-delete-workflow ns workflow-name))))
+     (workflow/workflow-service-delete-workflow ns workflow-name)
+     (log/debugf "deleted worflow '%s' on namespace 'ns'" workflow-name)
+     {:status :deleted
+      :name workflow-name})))
+
+
+(defn purge-workflow
+  "Delete all workflows in current namespace"
+  {:added "0.1.0"}
+  [spec ns]
+  (with-api-context spec
+    (when-let [workflow-to-delete (some->> (workflows-overview spec ns)
+                                           :workflows
+                                           (map :name))]
+      (let [total-ack (->> workflow-to-delete
+                           (map (fn [wname]
+                                  (delete-workflow spec ns wname)))
+                           doall)]
+        {:total (count total-ack)
+         :deleted total-ack}))))
 
 
 (defn get-workflow
@@ -45,7 +86,9 @@
    (get-workflow spec (str) workflow-name))
   ([spec ns workflow-name]
    (with-api-context spec
-     (workflow/workflow-service-get-workflow ns workflow-name))))
+     (let [{:keys [items] :as results}
+           (workflow/workflow-service-get-workflow ns workflow-name)]
+       (assoc results :total (count items))))))
 
 
 (defn lint-workflow

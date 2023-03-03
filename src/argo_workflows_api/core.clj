@@ -3,7 +3,8 @@
             [clojure.string :as str]
             [clj-http.client :as client]
             [clojure.spec.alpha :as s]
-            [argoj.specs :as as])
+            [argoj.specs :as as]
+            [clojure.set :as set])
   (:import (com.fasterxml.jackson.core JsonParseException)
            (java.io File)
            (java.util Date TimeZone)
@@ -216,7 +217,7 @@
        (map (fn [[k v]] (array-map :name k :content v)))
        vec))
 
-(defn call-api
+(defn- call-api*
   "Call an API by making HTTP request and return its response."
   [path method {:keys [path-params body-param content-types accepts auth-names] :as opts}]
   (let [{:keys [debug]} *api-context*
@@ -243,3 +244,14 @@
       (println "Response:")
       (println resp))
     (assoc resp :data (deserialize resp))))
+
+(defn call-api
+  "Catch HTTP error code and rewrap them into proper
+   Argo Exception"
+  [path method opts]
+  (try
+    (call-api* path method opts)
+    (catch Exception e
+      (let [{:keys [body]} (ex-data e)
+            data (parse-string body keyword)]
+        (throw (ex-info "Argo Workflow Error" data))))))
