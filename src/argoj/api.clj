@@ -12,6 +12,14 @@
 (defn- coerce-ns [ns]
   (if (empty? ns) :all ns))
 
+;;; Client
+
+(defn mk-client
+  [{:keys [token endpoint]}]
+  (cond-> {}
+    token (assoc :auths {"BearerToken" (str "Bearer " token)})
+    endpoint (assoc :base-url endpoint)))
+
 ;;; Workflow
 
 (defn list-workflows

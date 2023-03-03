@@ -19,6 +19,27 @@ Generate OpenAPI stubs for latest version with script:
 
 ## API Usage
 
+### Client Creation
+
+Create a client spec as follow:
+
+```clojure
+(ns user
+  (:require [argoj.api :as argo]))
+
+(def client-spec
+  (argo/mk-client {:token "xxxx"
+                   :endpoint "argo.foobar.svc.service:2746"}))
+```
+
+### List Workflows
+
+```clojure
+(argo/list-workflows client-spec "argo")
+```
+
+Rest TBD
+
 ## Testing
 
 ```bash
