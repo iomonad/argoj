@@ -15,7 +15,8 @@
   :dependencies [[org.clojure/clojure       "1.11.1"]
                  [clj-http                  "3.12.3"]
                  [cheshire                  "5.11.0"]
-                 [org.clojure/tools.logging "1.2.4"]]
+                 [org.clojure/tools.logging "1.2.4"]
+                 [prismatic/schema          "1.4.1"]]
   :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "1.4.2"]]
                    :source-paths   ["dev"]
                    :resource-paths ["dev-resources"]}

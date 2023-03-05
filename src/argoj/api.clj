@@ -53,9 +53,9 @@
 (defn create-workflow
   "Create a new workflow."
   {:added "0.1.0"}
-  [spec workflow-spec]
+  [spec ns workflow-spec]
   (with-api-context spec
-    (workflow/workflow-service-create-workflow workflow-spec)))
+    (workflow/workflow-service-create-workflow ns workflow-spec)))
 
 
 (defn delete-workflow
