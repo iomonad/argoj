@@ -1,7 +1,9 @@
 (ns argoj.api
   (:require [argo-workflows-api.core :refer [with-api-context]]
             [argo-workflows-api.api.workflow-service :as workflow]
-            [clojure.tools.logging :as log]))
+            [clojure.tools.logging :as log]
+            [schema.core :as s]
+            [argoj.specs :refer [ArgoWorkflow]]))
 
 ;;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ;;              API
@@ -55,8 +57,8 @@
   {:added "0.1.0"}
   [spec ns workflow-spec]
   (with-api-context spec
+    (s/validate ArgoWorkflow workflow-spec)
     (workflow/workflow-service-create-workflow ns workflow-spec)))
-
 
 (defn delete-workflow
   "Delete an existing Workflow"

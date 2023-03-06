@@ -29,7 +29,7 @@
 
   (argo/create-workflow
    spec "argo"
-   {:namespace "arego"
+   {:namespace "argo"
     :serverDryRun false
     :workflow
     {:metadata
@@ -50,4 +50,7 @@
          :args ["hello world"]
          :resources {}}}]
       :entrypoint "whalesay"
-      :arguments {}}}}))
+      :arguments {}}}})
+
+
+  )
