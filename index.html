@@ -2865,8 +2865,8 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>io.trosa/argoj -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/iomonad/argoj">io.trosa/argoj</a></h1><h2 class="project-version">3.4.5-0.1.0</h2><br /><p>Data-Oriented, pure Clojure API wrapper for Argo Workflow</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.11.1</td></tr><tr><td class="dep-name">clj-http</td><td class="dotted"><hr /></td><td class="dep-version">3.12.3</td></tr><tr><td class="dep-name">cheshire</td><td class="dotted"><hr /></td><td class="dep-version">5.11.0</td></tr><tr><td class="dep-name">org.clojure/tools.logging</td><td class="dotted"><hr /></td><td class="dep-version">1.2.4</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</a></li><li><a href="#argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</a></li><li><a href="#argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</a></li><li><a href="#argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</a></li><li><a href="#argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</a></li><li><a href="#argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</a></li><li><a href="#argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</a></li><li><a href="#argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</a></li><li><a href="#argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</a></li><li><a href="#argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</a></li><li><a href="#argo-workflows-api.core">argo-workflows-api.core</a></li><li><a href="#argoj.api">argoj.api</a></li><li><a href="#argoj.specs">argoj.specs</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.cron-workflow-service" name="argo-workflows-api.api.cron-workflow-service"><h1 class="project-name">argo-workflows-api.api.cron-workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>io.trosa/argoj -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/iomonad/argoj">io.trosa/argoj</a></h1><h2 class="project-version">3.4.5-0.2.0</h2><br /><p>Data-Oriented, pure Clojure API wrapper for Argo Workflow</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.11.1</td></tr><tr><td class="dep-name">clj-http</td><td class="dotted"><hr /></td><td class="dep-version">3.12.3</td></tr><tr><td class="dep-name">cheshire</td><td class="dotted"><hr /></td><td class="dep-version">5.11.0</td></tr><tr><td class="dep-name">prismatic/schema</td><td class="dotted"><hr /></td><td class="dep-version">1.4.1</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</a></li><li><a href="#argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</a></li><li><a href="#argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</a></li><li><a href="#argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</a></li><li><a href="#argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</a></li><li><a href="#argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</a></li><li><a href="#argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</a></li><li><a href="#argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</a></li><li><a href="#argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</a></li><li><a href="#argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</a></li><li><a href="#argo-workflows-api.core">argo-workflows-api.core</a></li><li><a href="#argoj.api">argoj.api</a></li><li><a href="#argoj.specs">argoj.specs</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.cron-workflow-service" name="argo-workflows-api.api.cron-workflow-service"><h1 class="project-name">argo-workflows-api.api.cron-workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.cron-workflow-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))</pre></td></tr><tr><td class="docs">
@@ -3889,9 +3889,8 @@ net.brehaut.ClojureTools = (function (SH) {
   (:require [cheshire.core :refer [generate-string parse-string]]
             [clojure.string :as str]
             [clj-http.client :as client]
-            [clojure.spec.alpha :as s]
             [argoj.specs :as as]
-            [clojure.set :as set])
+            [schema.core :as s])
   (:import (com.fasterxml.jackson.core JsonParseException)
            (java.io File)
            (java.util Date TimeZone)
@@ -3912,9 +3911,7 @@ net.brehaut.ClojureTools = (function (SH) {
          api-context# (-&gt; *api-context*
                           (merge api-context#)
                           (assoc :auths (merge (:auths *api-context*) (:auths api-context#))))]
-     (when-not (s/valid? ::as/context api-context#)
-       (throw (ex-info &quot;Argo Context Spec Exception&quot;
-                       {:error (s/explain-str ::as/context api-context#)})))
+     (s/validate as/ArgoContext api-context#)
      (binding [*api-context* api-context#]
        ~@body)))</pre></td></tr><tr><td class="docs"><p>Throw exception if any of the given parameters is nil.</p>
 </td><td class="codes"><pre class="brush: clojure">(defmacro check-required-params
@@ -4087,25 +4084,36 @@ net.brehaut.ClojureTools = (function (SH) {
   (try
     (call-api* path method opts)
     (catch Exception e
-      (let [{:keys [body]} (ex-data e)
-            data (parse-string body keyword)]
+      (let [{:keys [body]} (some-&gt; e ex-data)
+            data (if body (parse-string body keyword)
+                     {:error (.getMessage e)})]
         (throw (ex-info &quot;Argo Workflow Error&quot; data))))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argoj.api" name="argoj.api"><h1 class="project-name">argoj.api</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argoj.api
   (:require [argo-workflows-api.core :refer [with-api-context]]
             [argo-workflows-api.api.workflow-service :as workflow]
-            [clojure.tools.logging :as log]))</pre></td></tr><tr><td class="docs"><p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            [argo-workflows-api.api.cluster-workflow-template-service :as wt]
+            [argo-workflows-api.api.event-service :as ev]
+            [argo-workflows-api.api.event-source-service :as esv]
+            [argo-workflows-api.api.cron-workflow-service :as cron]
+            [argo-workflows-api.api.info-service :as ai]
+            [schema.core :as s]
+            [argoj.specs :refer :all]))</pre></td></tr><tr><td class="docs"><p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
              API
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</p>
 </td><td class="codes"></td></tr><tr><td class="docs"><p>Helpers</p>
 </td><td class="codes"></td></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(defn- coerce-ns [ns]
-  (if (empty? ns) :all ns))</pre></td></tr><tr><td class="docs"><p>Client</p>
+  (if (empty? ns) :all ns))</pre></td></tr><tr><td class="docs"><p>===============================</p>
+
+<h1> Client</h1>
 </td><td class="codes"></td></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(defn mk-client
   [{:keys [token endpoint]}]
   (cond-&gt; {}
     token (assoc :auths {&quot;BearerToken&quot; (str &quot;Bearer &quot; token)})
-    endpoint (assoc :base-url endpoint)))</pre></td></tr><tr><td class="docs"><p>Workflow</p>
+    endpoint (assoc :base-url endpoint)))</pre></td></tr><tr><td class="docs"><p>===============================</p>
+
+<h1> Workflows</h1>
 </td><td class="codes"></td></tr><tr><td class="docs"><p>Return a list of all the running workflows and their
    definitions</p>
 </td><td class="codes"><pre class="brush: clojure">(defn list-workflows
@@ -4131,9 +4139,10 @@ net.brehaut.ClojureTools = (function (SH) {
       :total (count items)})))</pre></td></tr><tr><td class="docs"><p>Create a new workflow.</p>
 </td><td class="codes"><pre class="brush: clojure">(defn create-workflow
   {:added &quot;0.1.0&quot;}
-  [spec workflow-spec]
+  [spec ns workflow-spec]
   (with-api-context spec
-    (workflow/workflow-service-create-workflow workflow-spec)))</pre></td></tr><tr><td class="docs"><p>Delete an existing Workflow</p>
+    (s/validate ArgoWorkflow workflow-spec)
+    (workflow/workflow-service-create-workflow ns workflow-spec)))</pre></td></tr><tr><td class="docs"><p>Delete an existing Workflow</p>
 </td><td class="codes"><pre class="brush: clojure">(defn delete-workflow
   {:added &quot;0.1.0&quot;}
   ([spec workflow-name]
@@ -4141,7 +4150,6 @@ net.brehaut.ClojureTools = (function (SH) {
   ([spec ns workflow-name]
    (with-api-context spec
      (workflow/workflow-service-delete-workflow ns workflow-name)
-     (log/debugf &quot;deleted worflow '%s' on namespace 'ns'&quot; workflow-name)
      {:status :deleted
       :name workflow-name})))</pre></td></tr><tr><td class="docs"><p>Delete all workflows in current namespace</p>
 </td><td class="codes"><pre class="brush: clojure">(defn purge-workflow
@@ -4177,6 +4185,7 @@ net.brehaut.ClojureTools = (function (SH) {
   {:added &quot;0.1.0&quot;}
   [spec ns workflow-spec]
   (with-api-context spec
+    (s/validate ArgoWorkflow workflow-spec)
     (workflow/workflow-service-submit-workflow ns workflow-spec)))</pre></td></tr><tr><td class="docs"><p>Stop a running workflow</p>
 </td><td class="codes"><pre class="brush: clojure">(defn stop-workflow
   {:added &quot;0.1.0&quot;}
@@ -4184,35 +4193,272 @@ net.brehaut.ClojureTools = (function (SH) {
    (stop-workflow spec (str) workflow-name))
   ([spec ns workflow-name]
    (with-api-context spec
-     (workflow/workflow-service-stop-workflow spec ns workflow-name))))</pre></td></tr><tr><td class="docs"><p>To Implement</p>
-</td><td class="codes"><pre class="brush: clojure">(comment
-  (defn get-pod-log       [])
-  (defn resubmit-workflow [])
-  (defn resume-workflow   [])
-  (defn retry-workflow    [])
-  (defn set-workflow      [])
-  (defn suspend-workflow  [])
-  (defn terminate-workflow [])
-  (defn watch-events       [])
-  (defn watch-workflows    [])
-  (defn workflows-logs     []))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argoj.specs" name="argoj.specs"><h1 class="project-name">argoj.specs</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+     (workflow/workflow-service-stop-workflow spec ns workflow-name))))</pre></td></tr><tr><td class="docs"><p>Retrieve pod logs</p>
+</td><td class="codes"><pre class="brush: clojure">(defn get-pod-log
+  {:added &quot;0.1.1&quot;}
+  [spec ns workflow-name pod-name]
+  (with-api-context spec
+    (workflow/workflow-service-pod-logs ns workflow-name pod-name)))</pre></td></tr><tr><td class="docs"><p>Resubmit workflow</p>
+</td><td class="codes"><pre class="brush: clojure">(defn resubmit-workflow
+  {:added &quot;0.1.1&quot;}
+  [spec ns workflow-name workflow-spec]
+  (with-api-context spec
+    (s/validate ArgoWorkflowResubmit workflow-spec)
+    (workflow/workflow-service-resubmit-workflow ns workflow-name workflow-spec)))</pre></td></tr><tr><td class="docs"><p>Suspend a workflow</p>
+</td><td class="codes"><pre class="brush: clojure">(defn suspend-workflow
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (suspend-workflow spec ns name {}))
+  ([spec ns name body]
+   (with-api-context spec
+     (workflow/workflow-service-suspend-workflow ns name body))))</pre></td></tr><tr><td class="docs"><p>Resume a workflow</p>
+</td><td class="codes"><pre class="brush: clojure">(defn resume-workflow
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (resume-workflow spec ns name {}))
+  ([spec ns name body]
+   (with-api-context spec
+     (workflow/workflow-service-resume-workflow ns name body))))</pre></td></tr><tr><td class="docs"><p>Retry a workflow</p>
+</td><td class="codes"><pre class="brush: clojure">(defn retry-workflow
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (retry-workflow spec ns name {}))
+  ([spec ns name body]
+   (with-api-context spec
+     (workflow/workflow-service-retry-workflow ns name body))))</pre></td></tr><tr><td class="docs"><p>Set workflows properties &amp; metadata</p>
+</td><td class="codes"><pre class="brush: clojure">(defn set-workflow
+  {:added &quot;0.1.1&quot;}
+  [spec ns name body]
+  (with-api-context spec
+    (s/validate ArgoWorkflowSetter body)
+    (workflow/workflow-service-set-workflow ns name body)))</pre></td></tr><tr><td class="docs"><p>Terminate a workflow</p>
+</td><td class="codes"><pre class="brush: clojure">(defn terminate-workflow
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (terminate-workflow spec ns name {}))
+  ([spec ns name body]
+   (with-api-context spec
+     (workflow/workflow-service-terminate-workflow ns name body))))</pre></td></tr><tr><td class="docs"><p>Watch namespace events</p>
+
+<p>   Create a persistent connection</p>
+</td><td class="codes"><pre class="brush: clojure">(defn watch-events
+  {:added &quot;0.1.1&quot;}
+  [spec ns]
+  (with-api-context spec
+    (workflow/workflow-service-watch-events ns)))</pre></td></tr><tr><td class="docs"><p>Watch nampasce workflows events</p>
+</td><td class="codes"><pre class="brush: clojure">(defn watch-workflows
+  {:added &quot;0.1.1&quot;}
+  [spec ns]
+  (with-api-context spec
+    (workflow/workflow-service-watch-workflows ns)))</pre></td></tr><tr><td class="docs"><p>Retrieve Workflows logs</p>
+</td><td class="codes"><pre class="brush: clojure">(defn workflows-logs
+  {:added &quot;0.1.1&quot;}
+  ([spec ns workflow-name] (workflows-logs spec ns workflow-name {}))
+  ([spec ns workflow-name params]
+   (with-api-context spec
+     (workflow/workflow-service-workflow-logs ns workflow-name ;params))))</pre></td></tr><tr><td class="docs"><p>===============================</p>
+
+<h1> Templates</h1>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Retrieve Workflow Templates</p>
+</td><td class="codes"><pre class="brush: clojure">(defn list-templates
+  {:added &quot;0.1.1&quot;}
+  [spec]
+  (with-api-context spec
+    (wt/cluster-workflow-template-service-list-cluster-workflow-templates)))</pre></td></tr><tr><td class="docs"><p>Retrieve Workflow Template by Name metadata</p>
+</td><td class="codes"><pre class="brush: clojure">(defn get-template
+  {:added &quot;0.1.1&quot;}
+  [spec template-name]
+  (with-api-context spec
+    (wt/cluster-workflow-template-service-get-cluster-workflow-template template-name)))</pre></td></tr><tr><td class="docs"><p>Delete Workflow Template by name</p>
+</td><td class="codes"><pre class="brush: clojure">(defn delete-template
+  {:added &quot;0.1.1&quot;}
+  [spec template-name]
+  (with-api-context spec
+    (wt/cluster-workflow-template-service-delete-cluster-workflow-template template-name)))</pre></td></tr><tr><td class="docs"><p>Create a new Workflow template</p>
+</td><td class="codes"><pre class="brush: clojure">(defn create-template
+  {:added &quot;0.1.1&quot;}
+  [spec body]
+  (with-api-context spec
+    ;; TODO: Implement Template Spec
+    ;;(s/validate ArgoWorkflowTemplate body)
+    (wt/cluster-workflow-template-service-create-cluster-workflow-template body)))</pre></td></tr><tr><td class="docs"><p>Update a Workflow template</p>
+</td><td class="codes"><pre class="brush: clojure">(defn create-template
+  {:added &quot;0.1.1&quot;}
+  [spec template-name body]
+  (with-api-context spec
+    ;; TODO: Implement Template Spec
+    ;;(s/validate ArgoWorkflowTemplate body)
+    (wt/cluster-workflow-template-service-update-cluster-workflow-template template-name body)))</pre></td></tr><tr><td class="docs"><p>===============================</p>
+
+<h1> Admininistration</h1>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Retrieve Cluster Info</p>
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-info
+  {:added &quot;0.1.1&quot;}
+  [spec]
+  (with-api-context spec
+    (ai/info-service-get-info)))</pre></td></tr><tr><td class="docs"><p>Retrieve User Info</p>
+</td><td class="codes"><pre class="brush: clojure">(defn user-info
+  {:added &quot;0.1.1&quot;}
+  [spec]
+  (with-api-context spec
+    (ai/info-service-get-user-info)))</pre></td></tr><tr><td class="docs"><p>Retrieve Cluster Version &amp; Build informations</p>
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-version
+  {:added &quot;0.1.1&quot;}
+  [spec]
+  (with-api-context spec
+    (ai/info-service-get-version)))</pre></td></tr><tr><td class="docs"><p>===============================</p>
+
+<h1> Events & Events Sources</h1>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Retrieve Workflow events binding for the
+   target namespace</p>
+</td><td class="codes"><pre class="brush: clojure">(defn get-events-bindings
+  {:added &quot;0.1.1&quot;}
+  [spec ns]
+  (with-api-context spec
+    (ev/event-service-list-workflow-event-bindings ns)))</pre></td></tr><tr><td class="docs"><p>Create Workflow events binding.</p>
+
+<p>  Optional discriminator for the io.argoproj.workflow.v1alpha1. This should almost always be empty.
+  Used for edge-cases where the event payload alone is not provide enough information to discriminate the event.
+  This MUST NOT be used as security mechanism, e.g. to allow two clients to use the same access token, or
+  to support webhooks on unsecured server. Instead, use access tokens.</p>
+
+<p>  The event itself can be any data.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn create-events-binding
+  {:added &quot;0.1.1&quot;}
+  [spec ns discriminator data]
+  (with-api-context spec
+    (ev/event-service-receive-event ns discriminator data)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn list-event-sources
+  {:added &quot;0.1.1&quot;}
+  ([spec ns] (list-event-sources spec ns {}))
+  ([spec ns options]
+   (with-api-context spec
+     (esv/event-source-service-list-event-sources ns options))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn get-event-sources
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (get-event-sources spec ns name {}))
+  ([spec ns name options]
+   (with-api-context spec
+     (esv/event-source-service-get-event-source ns name options))))</pre></td></tr><tr><td class="docs"><p>===============================</p>
+
+<h1> CronJobs</h1>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>List cronjobs for the current namespace</p>
+</td><td class="codes"><pre class="brush: clojure">(defn list-cronjobs
+  {:added &quot;0.1.1&quot;}
+  ([spec ns] (list-cronjobs spec ns {}))
+  ([spec ns options]
+   (with-api-context spec
+     (cron/cron-workflow-service-list-cron-workflows ns options))))</pre></td></tr><tr><td class="docs"><p>Get cronjob by name</p>
+</td><td class="codes"><pre class="brush: clojure">(defn get-cronjob
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (get-cronjob spec ns name {}))
+  ([spec ns name options]
+   (with-api-context spec
+     (cron/cron-workflow-service-get-cron-workflow ns name options))))</pre></td></tr><tr><td class="docs"><p>Create cronjob</p>
+</td><td class="codes"><pre class="brush: clojure">(defn create-cronjob
+  {:added &quot;0.1.1&quot;}
+  [spec ns body]
+  (with-api-context spec
+    ;; TODO: Create Workflow Spec
+    ;; (s/validate Fixme body)
+    (cron/cron-workflow-service-create-cron-workflow ns body)))</pre></td></tr><tr><td class="docs"><p>Suspend Cronjob</p>
+</td><td class="codes"><pre class="brush: clojure">(defn suspend-cronjob
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (suspend-cronjob spec ns name {}))
+  ([spec ns name options]
+   (with-api-context spec
+     (cron/cron-workflow-service-suspend-cron-workflow ns name options))))</pre></td></tr><tr><td class="docs"><p>Resume Cronjob</p>
+</td><td class="codes"><pre class="brush: clojure">(defn resume-cronjob
+  {:added &quot;0.1.1&quot;}
+  ([spec ns name] (resume-cronjob spec ns name {}))
+  ([spec ns name options]
+   (with-api-context spec
+     (cron/cron-workflow-service-resume-cron-workflow ns name options))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argoj.specs" name="argoj.specs"><h1 class="project-name">argoj.specs</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argoj.specs
-  (:require [clojure.spec.alpha :as s]))</pre></td></tr><tr><td class="docs"><p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  (:require [schema.core :refer [defschema Str Bool
+                                 Keyword] :as s]))</pre></td></tr><tr><td class="docs"><p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             Specs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</p>
-</td><td class="codes"></td></tr><tr><td class="docs"><p>Context Spec</p>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Kubernetes</p>
 </td><td class="codes"></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(s/def :context/base-url string?)
-(s/def :context/date-format string?)
-(s/def :context/datetime-format string?)
-(s/def :context/debug boolean?)
-(s/def :context/auths map?)</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(s/def ::context
-  (s/keys :req-un [:context/base-url
-                   :context/date-format
-                   :context/datetime-format
-                   :context/debug
-                   :context/auths]))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.core">argo-workflows-api.core</li><li class="floating-toc-li" id="floating-toc_argoj.api">argoj.api</li><li class="floating-toc-li" id="floating-toc_argoj.specs">argoj.specs</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+</td><td class="codes"><pre class="brush: clojure">(defschema KubeVCTemplate
+  {:metadata {:name Str}
+   :spec {:accessModes [Str]
+          :resources {(s/optional-key :request) {:storage Str}}}})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema KubeVolumeMount
+  {:name Str
+   :mountPath Str})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema KubeContainerEnv
+  {:name Str
+   (s/optional-key :value) Str
+   (s/optional-key :valueFrom) {:configMapKeyRef {:name Str
+                                                  (s/optional-key :value) Str}}})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema KubeContainerResourcesUnit
+  {(s/optional-key :memory) Str
+   (s/optional-key :cpu) Str})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema KubeContainerResources
+  {(s/optional-key :limits)  KubeContainerResourcesUnit
+   (s/optional-key :request) KubeContainerResourcesUnit})</pre></td></tr><tr><td class="docs"><p>Context</p>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Context Schema</p>
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoContext
+  {:base-url Str
+   :date-format Str
+   :datetime-format Str
+   :debug Bool
+   :auths {Str Str}})</pre></td></tr><tr><td class="docs"><p>Workflow</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowMetadata
+  {Keyword Str})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowParameter
+  {:name Str
+   (s/optional-key :value) Str})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowArguments
+  {:parameters [ArgoWorkflowParameter]})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowInput
+  {:parameters [ArgoWorkflowParameter]})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowOuput
+  {:parameters [ArgoWorkflowParameter]})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoContainerSpec
+  {:name Str
+   :image Str
+   :command [Str]
+   :args [Str]
+   (s/optional-key :resources) KubeContainerResources
+   (s/optional-key :volumeMounts) KubeVolumeMount
+   (s/optional-key :env) KubeContainerEnv})</pre></td></tr><tr><td class="docs"><p>Workflow Schema</p>
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflow
+  {:namespace Str
+   :serverDryRun Bool
+   :workflow
+   {:metadata {:generateName Str
+               :namespace Str
+               :labels {Keyword Str}}
+    :spec {:templates
+           [{:name Str
+             (s/optional-key :arguments) ArgoWorkflowArguments
+             (s/optional-key :inputs) ArgoWorkflowInput
+             (s/optional-key :outputs) ArgoWorkflowOuput
+             (s/optional-key :metadata) ArgoWorkflowMetadata
+             :container ArgoContainerSpec}]
+           :entrypoint Str
+           (s/optional-key :arguments) ArgoWorkflowArguments
+           (s/optional-key :volumeClaimTemplates) [KubeVCTemplate]}}})</pre></td></tr><tr><td class="docs"><p>Contracts</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowResubmit
+  {:memoized Bool
+   :name Str
+   :namespace Str
+   :parameters [Str]})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowLifecycle
+  {:name Str
+   :namespace Str})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowSetter
+  {:message Str
+   :name Str
+   :namespace Str
+   :nodeFieldSelector Str
+   :outputParameters Str
+   :phase Str})</pre></td></tr><tr><td class="docs"><p>TODO: Implemenation</p>
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoWorkflowTemplate
+  {})</pre></td></tr><tr><td class="docs"><p>TODO: Implemenation</p>
+</td><td class="codes"><pre class="brush: clojure">(defschema ArgoCronjob
+  {})</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.core">argo-workflows-api.core</li><li class="floating-toc-li" id="floating-toc_argoj.api">argoj.api</li><li class="floating-toc-li" id="floating-toc_argoj.specs">argoj.specs</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
