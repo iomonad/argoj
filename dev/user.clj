@@ -2,6 +2,7 @@
   (:require [argo-workflows-api.core :refer :all]
             [clojure.tools.namespace.repl :refer :all]
             [argoj.api :as argo]
+            [argoj.admin :as argo-adm]
             [clojure.pprint :refer [pprint]]))
 
 ;;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,5 +51,8 @@
   (argo/get-pod-log spec "argo" "hello-world-4n922" "main")
 
   (argo/suspend-workflow spec "argo" "hello-world-tbrvq")
-  
+
+  (argo-adm/cluster-version spec)
+  (argo-adm/cluster-info spec)
+  (argo-adm/user-info spec)
   )
