@@ -86,3 +86,15 @@
            :entrypoint Str
            (s/optional-key :arguments) ArgoWorkflowArguments
            (s/optional-key :volumeClaimTemplates) [KubeVCTemplate]}}})
+
+;;; Contracts
+
+(defschema ArgoWorkflowResubmit
+  {:memoized Bool
+   :name Str
+   :namespace Str
+   :parameters [Str]})
+
+(defschema ArgoWorkflowLifecycle
+  {:name Str
+   :namespace Str})

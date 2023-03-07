@@ -3,7 +3,8 @@
             [argo-workflows-api.api.workflow-service :as workflow]
             [clojure.tools.logging :as log]
             [schema.core :as s]
-            [argoj.specs :refer [ArgoWorkflow]]))
+            [argoj.specs :refer [ArgoWorkflow]]
+            [argoj.specs :as as]))
 
 ;;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ;;              API
@@ -59,6 +60,7 @@
   (with-api-context spec
     (s/validate ArgoWorkflow workflow-spec)
     (workflow/workflow-service-create-workflow ns workflow-spec)))
+
 
 (defn delete-workflow
   "Delete an existing Workflow"
@@ -116,6 +118,7 @@
   {:added "0.1.0"}
   [spec ns workflow-spec]
   (with-api-context spec
+    (s/validate as/ArgoWorkflow workflow-spec)
     (workflow/workflow-service-submit-workflow ns workflow-spec)))
 
 
@@ -128,14 +131,52 @@
    (with-api-context spec
      (workflow/workflow-service-stop-workflow spec ns workflow-name))))
 
+
+(defn get-pod-log
+  "Retrieve pod logs"
+  {:added "0.1.1"}
+  [spec ns workflow-name pod-name]
+  (with-api-context spec
+    (workflow/workflow-service-pod-logs ns workflow-name pod-name)))
+
+
+(defn resubmit-workflow
+  "Resubmit workflow"
+  {:added "0.1.1"}
+  [spec ns workflow-name workflow-spec]
+  (with-api-context spec
+    (s/validate as/ArgoWorkflowResubmit workflow-spec)
+    (workflow/workflow-service-resubmit-workflow ns workflow-name workflow-spec)))
+
+
+(defn suspend-workflow
+  "Suspend a workflow"
+  {:added "0.1.1"}
+  [spec ns name]
+  (with-api-context spec
+    (workflow/workflow-service-suspend-workflow ns name {})))
+
+
+(defn resume-workflow
+  "Resume a workflow"
+  {:added "0.1.1"}
+  [spec ns name ]
+  (with-api-context spec
+    (workflow/workflow-service-resume-workflow ns name {})))
+
+
+(defn retry-workflow
+  "Retry a workflow"
+  {:added "0.1.1"}
+  [spec ns name]
+  (with-api-context spec
+    (workflow/workflow-service-retry-workflow ns name {})))
+
+
 ;;; To Implement
+
 (comment
-  (defn get-pod-log       [])
-  (defn resubmit-workflow [])
-  (defn resume-workflow   [])
-  (defn retry-workflow    [])
   (defn set-workflow      [])
-  (defn suspend-workflow  [])
   (defn terminate-workflow [])
   (defn watch-events       [])
   (defn watch-workflows    [])
