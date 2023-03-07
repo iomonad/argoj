@@ -47,5 +47,8 @@
          :resources {}}}]
       :entrypoint "whalesay"}}})
 
+  (argo/get-pod-log spec "argo" "hello-world-4n922" "main")
 
+  (argo/suspend-workflow spec "argo" "hello-world-tbrvq")
+  
   )
