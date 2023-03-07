@@ -6,7 +6,6 @@
             [argo-workflows-api.api.event-source-service :as esv]
             [argo-workflows-api.api.cron-workflow-service :as cron]
             [argo-workflows-api.api.info-service :as ai]
-            [clojure.tools.logging :as log]
             [schema.core :as s]
             [argoj.specs :refer :all]))
 
@@ -78,7 +77,6 @@
   ([spec ns workflow-name]
    (with-api-context spec
      (workflow/workflow-service-delete-workflow ns workflow-name)
-     (log/debugf "deleted worflow '%s' on namespace 'ns'" workflow-name)
      {:status :deleted
       :name workflow-name})))
 
