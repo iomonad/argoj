@@ -29,7 +29,7 @@ Create a client spec as follow:
 
 (def client-spec
   (argo/mk-client {:token "xxxx"
-                   :endpoint "argo.foobar.svc.service:2746"}))
+                   :endpoint "argo-server.argo.svc.cluster:2746"}))
 ```
 
 ### List Workflows
@@ -45,6 +45,16 @@ Rest TBD
 ```bash
 lein test
 ```
+## Changelog
+
+### 3.4.5-0.2.0
+
+- API & Spec Implemenations for Jobs, Events, Workflows, WorkflowsTemplate & CronJobs
+- Admin routes implemenations
+
+### 3.4.5-0.1.0
+
+- First API Release
 
 ## License
 
