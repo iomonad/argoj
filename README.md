@@ -45,6 +45,16 @@ Rest TBD
 ```bash
 lein test
 ```
+## Changelog
+
+### 3.4.5-0.1.1
+
+- API & Spec Implemenations for Jobs, Events, Workflows, WorkflowsTemplate & CronJobs
+- Admin routes implemenations
+
+### 3.4.5-0.1.0
+
+- First API Release
 
 ## License
 

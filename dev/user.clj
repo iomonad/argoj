@@ -2,7 +2,6 @@
   (:require [argo-workflows-api.core :refer :all]
             [clojure.tools.namespace.repl :refer :all]
             [argoj.api :as argo]
-            [argoj.admin :as argo-adm]
             [clojure.pprint :refer [pprint]]))
 
 ;;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,7 +51,14 @@
 
   (argo/suspend-workflow spec "argo" "hello-world-tbrvq")
 
-  (argo-adm/cluster-version spec)
-  (argo-adm/cluster-info spec)
-  (argo-adm/user-info spec)
+  (argo/cluster-version spec)
+  (argo/cluster-info spec)
+  (argo/user-info spec)
+
+  (argo/watch-events spec "argo")
+  (argo/workflows-logs spec "argo" "hello-world-wls6b")
+
+  (argo/get-templates spec "foo")
+  (argo/get-events-bindings spec "argo")
+  (argo/list-cronjobs spec "argo")
   )

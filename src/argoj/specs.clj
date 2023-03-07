@@ -98,3 +98,19 @@
 (defschema ArgoWorkflowLifecycle
   {:name Str
    :namespace Str})
+
+(defschema ArgoWorkflowSetter
+  {:message Str
+   :name Str
+   :namespace Str
+   :nodeFieldSelector Str
+   :outputParameters Str
+   :phase Str})
+
+;;; TODO: Implemenation
+(defschema ArgoWorkflowTemplate
+  {})
+
+;;; TODO: Implemenation
+(defschema ArgoCronjob
+  {})
