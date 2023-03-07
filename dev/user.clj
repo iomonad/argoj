@@ -39,18 +39,13 @@
      :spec
      {:templates
       [{:name "whalesay"
-        :arguments {}
-        :inputs {}
-        :outputs {}
-        :metadata {}
         :container
         {:name ""
          :image "docker/whalesay:latest"
          :command ["cowsay"]
          :args ["hello world"]
          :resources {}}}]
-      :entrypoint "whalesay"
-      :arguments {}}}})
+      :entrypoint "whalesay"}}})
 
 
   )
