@@ -66,7 +66,8 @@
    :args [Str]
    (s/optional-key :resources) KubeContainerResources
    (s/optional-key :volumeMounts) KubeVolumeMount
-   (s/optional-key :env) KubeContainerEnv})
+   (s/optional-key :env) [KubeContainerEnv]})
+
 
 (defschema ArgoWorkflow
   "Workflow Schema"
