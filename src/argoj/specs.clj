@@ -62,8 +62,8 @@
 (defschema ArgoContainerSpec
   {:name Str
    :image Str
-   :command [Str]
-   :args [Str]
+   (s/optional-key :command) [Str]
+   (s/optional-key :args) [Str]
    (s/optional-key :resources) KubeContainerResources
    (s/optional-key :volumeMounts) KubeVolumeMount
    (s/optional-key :env) [KubeContainerEnv]})
