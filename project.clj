@@ -1,4 +1,4 @@
-(defproject io.trosa/argoj "3.4.5-0.3.0-SNAPSHOT"
+(defproject io.trosa/argoj "3.4.5-0.3.1-SNAPSHOT"
   :description "Data-Oriented, pure Clojure API wrapper for Argo Workflow"
   :url "https://github.com/iomonad/argoj"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
