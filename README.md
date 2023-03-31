@@ -32,10 +32,38 @@ Create a client spec as follow:
                    :endpoint "argo-server.argo.svc.cluster:2746"}))
 ```
 
-### List Workflows
+### Submit a Workflow
+
+See [Field Reference](https://argoproj.github.io/argo-workflows/fields/) for all supported field used as EDN
+
+#### Hello World
 
 ```clojure
-(argo/list-workflows client-spec "argo")
+(def spec
+  {:namespace "argo"
+   :serverDryRun false
+   :workflow {:metadata {:namespace "argo"
+                         :generateName "foobar-"
+                         :labels #:workflows.argoproj.io{:completed "false"}}
+              :spec
+              {:templates
+               [{:name "cowsay"
+                 :container {:name "cowsay"
+                             :image "docker/whalesay:latest"
+                             :command ["cowsay"]
+                             :args ["hello world"]
+                             :resources {}}}]
+               :entrypoint "cowsay"}}})
+
+(argo/create-workflow client "argo" spec)
+```
+
+### List Workflows
+
+List workflows, and return their status / results
+
+```clojure
+(count (:items (argo/list-workflows client "argo"))) ;; => 1
 ```
 
 Rest TBD
