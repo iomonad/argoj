@@ -47,6 +47,10 @@ lein test
 ```
 ## Changelog
 
+### 3.4.5-0.3.1
+
+- Schema Fix
+
 ### 3.4.5-0.2.0
 
 - API & Spec Implemenations for Jobs, Events, Workflows, WorkflowsTemplate & CronJobs
