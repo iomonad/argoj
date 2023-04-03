@@ -18,6 +18,11 @@
 (defn- coerce-ns [ns]
   (if (empty? ns) :all ns))
 
+
+(defn- mk-query-params
+  [m]
+  (for [[k v] m] (str (name k) "=" v)))
+
 ;;; ===============================
 ;;;  Client
 ;;; ===============================
@@ -46,6 +51,20 @@
               :namespace (coerce-ns ns))))))
 
 
+(defn search-workflows
+  "Search running workflows with labels filters"
+  {:added "0.3.3"}
+  ([spec] (search-workflows spec {}))
+  ([spec filters] (search-workflows spec (str) filters))
+  ([spec ns filters]
+   (with-api-context spec
+     (let [{:keys [items] :as results}
+           (workflow/workflow-service-list-workflows ns {:list-optionslabel-selector (mk-query-params filters)})]
+       (assoc results
+              :total (count items)
+              :namespace (coerce-ns ns))))))
+
+
 (defn workflows-overview
   "Return a quick overview of running workflows"
   {:added "0.1.0"}
@@ -53,7 +72,7 @@
   ([spec ns]
    (let [{:keys [items]} (list-workflows spec ns)]
      {:workflows (->> items
-                      (map (fn [{:keys [metadata spec status]}]
+                      (map (fn [{:keys [metadata status]}]
                              (-> (select-keys metadata [:name])
                                  (merge (select-keys status [:startedAt :phase]))))))
       :namespace (coerce-ns ns)

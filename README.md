@@ -58,6 +58,14 @@ See [Field Reference](https://argoproj.github.io/argo-workflows/fields/) for all
 (argo/create-workflow client "argo" spec)
 ```
 
+### Search Workflow
+
+Workflows can be selected by their labels:
+
+```clojure
+(argo/search-workflows spec "argo" {:initiator "foobar"}) ;; {:metadata {:resourceVersion ...
+```
+
 ### List Workflows
 
 List workflows, and return their status / results
@@ -66,7 +74,17 @@ List workflows, and return their status / results
 (count (:items (argo/list-workflows client "argo"))) ;; => 1
 ```
 
-Rest TBD
+### Delete Workflows
+
+Delete running or completed Workflow
+
+```clojure
+(argo/create-workflow client "argo" "foobar-8fu7j")
+```
+
+### API
+
+See complete implemented API method [on this documentation page.](https://iomonad.github.io/argoj/#argoj.api)
 
 ## Testing
 
