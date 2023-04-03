@@ -1,4 +1,4 @@
-# argoj [![Clojure CI](https://github.com/iomonad/argoj/actions/workflows/clojure.yml/badge.svg)](https://github.com/iomonad/argoj/actions/workflows/clojure.yml) [![Clojars Project](https://img.shields.io/clojars/v/io.trosa/argoj.svg)](https://clojars.org/io.trosa/argoj)
+# argoj [![Clojure CI](https://github.com/iomonad/argoj/actions/workflows/clojure.yml/badge.svg)](https://github.com/iomonad/argoj/actions/workflows/clojure.yml) [![.github/workflows/release.yml](https://github.com/iomonad/argoj/actions/workflows/release.yml/badge.svg)](https://github.com/iomonad/argoj/actions/workflows/release.yml) [![Clojars Project](https://img.shields.io/clojars/v/io.trosa/argoj.svg)](https://clojars.org/io.trosa/argoj)
 
 <a href="https://github.com/iomonad/argoj"><img
   src="https://argoproj.github.io/argo-workflows/assets/logo.png"
