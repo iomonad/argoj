@@ -93,7 +93,9 @@ lein test
 ```
 ## Changelog
 
-### 3.4.5-0.3.2-SNAPSHOT
+### 3.4.5-0.3.5-SNAPSHOT
+
+- Added unsafe executor function
 
 ### 3.4.5-0.2.0
 
