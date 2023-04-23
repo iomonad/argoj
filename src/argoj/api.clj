@@ -88,6 +88,14 @@
     (workflow/workflow-service-create-workflow ns workflow-spec)))
 
 
+(defn create-workflow!
+  "Create a new workflow, without spec validation"
+  {:added "0.3.5"}
+  [spec ns workflow-spec]
+  (with-api-context spec
+    (workflow/workflow-service-create-workflow ns workflow-spec)))
+
+
 (defn delete-workflow
   "Delete an existing Workflow"
   {:added "0.1.0"}
