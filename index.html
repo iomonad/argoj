@@ -2865,8 +2865,8 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>io.trosa/argoj -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/iomonad/argoj">io.trosa/argoj</a></h1><h2 class="project-version">3.4.5-0.3.4</h2><br /><p>Data-Oriented, pure Clojure API wrapper for Argo Workflow</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.11.1</td></tr><tr><td class="dep-name">clj-http</td><td class="dotted"><hr /></td><td class="dep-version">3.12.3</td></tr><tr><td class="dep-name">cheshire</td><td class="dotted"><hr /></td><td class="dep-version">5.11.0</td></tr><tr><td class="dep-name">prismatic/schema</td><td class="dotted"><hr /></td><td class="dep-version">1.4.1</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#argoj.specs">argoj.specs</a></li><li><a href="#argoj.api">argoj.api</a></li><li><a href="#argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</a></li><li><a href="#argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</a></li><li><a href="#argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</a></li><li><a href="#argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</a></li><li><a href="#argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</a></li><li><a href="#argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</a></li><li><a href="#argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</a></li><li><a href="#argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</a></li><li><a href="#argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</a></li><li><a href="#argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</a></li><li><a href="#argo-workflows-api.core">argo-workflows-api.core</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argoj.specs" name="argoj.specs"><h1 class="project-name">argoj.specs</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>io.trosa/argoj -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/iomonad/argoj">io.trosa/argoj</a></h1><h2 class="project-version">3.4.5-0.3.5</h2><br /><p>Data-Oriented, pure Clojure API wrapper for Argo Workflow</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.11.1</td></tr><tr><td class="dep-name">clj-http</td><td class="dotted"><hr /></td><td class="dep-version">3.12.3</td></tr><tr><td class="dep-name">cheshire</td><td class="dotted"><hr /></td><td class="dep-version">5.11.0</td></tr><tr><td class="dep-name">prismatic/schema</td><td class="dotted"><hr /></td><td class="dep-version">1.4.1</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#argoj.specs">argoj.specs</a></li><li><a href="#argoj.api">argoj.api</a></li><li><a href="#argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</a></li><li><a href="#argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</a></li><li><a href="#argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</a></li><li><a href="#argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</a></li><li><a href="#argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</a></li><li><a href="#argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</a></li><li><a href="#argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</a></li><li><a href="#argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</a></li><li><a href="#argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</a></li><li><a href="#argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</a></li><li><a href="#argo-workflows-api.core">argo-workflows-api.core</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argoj.specs" name="argoj.specs"><h1 class="project-name">argoj.specs</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argoj.specs
   (:require [schema.core :refer [defschema Str Bool
                                  Keyword] :as s]))</pre></td></tr><tr><td class="docs"><p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3024,6 +3024,11 @@ net.brehaut.ClojureTools = (function (SH) {
   [spec ns workflow-spec]
   (with-api-context spec
     (s/validate ArgoWorkflow workflow-spec)
+    (workflow/workflow-service-create-workflow ns workflow-spec)))</pre></td></tr><tr><td class="docs"><p>Create a new workflow, without spec validation</p>
+</td><td class="codes"><pre class="brush: clojure">(defn create-workflow!
+  {:added &quot;0.3.5&quot;}
+  [spec ns workflow-spec]
+  (with-api-context spec
     (workflow/workflow-service-create-workflow ns workflow-spec)))</pre></td></tr><tr><td class="docs"><p>Delete an existing Workflow</p>
 </td><td class="codes"><pre class="brush: clojure">(defn delete-workflow
   {:added &quot;0.1.0&quot;}
@@ -3251,217 +3256,7 @@ net.brehaut.ClojureTools = (function (SH) {
   ([spec ns name] (resume-cronjob spec ns name {}))
   ([spec ns name options]
    (with-api-context spec
-     (cron/cron-workflow-service-resume-cron-workflow ns name options))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.sensor-service" name="argo-workflows-api.api.sensor-service"><h1 class="project-name">argo-workflows-api.api.sensor-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.sensor-service
-  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
-  (:import (java.io File)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-create-sensor-with-http-info
-  [namespace body ]
-  (call-api &quot;/api/v1/sensors/{namespace}&quot; :post
-            {:path-params   {&quot;namespace&quot; namespace }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :body-param    body
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-create-sensor
-  [namespace body ]
-  (:data (sensor-service-create-sensor-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-delete-sensor-with-http-info
-  ([namespace name ] (sensor-service-delete-sensor-with-http-info namespace name nil))
-  ([namespace name {:keys [delete-optionsgrace-period-seconds delete-optionspreconditionsuid delete-optionspreconditionsresource-version delete-optionsorphan-dependents delete-optionspropagation-policy delete-optionsdry-run ]}]
-   (call-api &quot;/api/v1/sensors/{namespace}/{name}&quot; :delete
-             {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
-              :header-params {}
-              :query-params  {&quot;deleteOptions.gracePeriodSeconds&quot; delete-optionsgrace-period-seconds &quot;deleteOptions.preconditions.uid&quot; delete-optionspreconditionsuid &quot;deleteOptions.preconditions.resourceVersion&quot; delete-optionspreconditionsresource-version &quot;deleteOptions.orphanDependents&quot; delete-optionsorphan-dependents &quot;deleteOptions.propagationPolicy&quot; delete-optionspropagation-policy &quot;deleteOptions.dryRun&quot; (with-collection-format delete-optionsdry-run :multi) }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-delete-sensor
-  ([namespace name ] (sensor-service-delete-sensor namespace name nil))
-  ([namespace name optional-params]
-   (:data (sensor-service-delete-sensor-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-get-sensor-with-http-info
-  ([namespace name ] (sensor-service-get-sensor-with-http-info namespace name nil))
-  ([namespace name {:keys [get-optionsresource-version ]}]
-   (call-api &quot;/api/v1/sensors/{namespace}/{name}&quot; :get
-             {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
-              :header-params {}
-              :query-params  {&quot;getOptions.resourceVersion&quot; get-optionsresource-version }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-get-sensor
-  ([namespace name ] (sensor-service-get-sensor namespace name nil))
-  ([namespace name optional-params]
-   (:data (sensor-service-get-sensor-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-list-sensors-with-http-info
-  ([namespace ] (sensor-service-list-sensors-with-http-info namespace nil))
-  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
-   (call-api &quot;/api/v1/sensors/{namespace}&quot; :get
-             {:path-params   {&quot;namespace&quot; namespace }
-              :header-params {}
-              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-list-sensors
-  ([namespace ] (sensor-service-list-sensors namespace nil))
-  ([namespace optional-params]
-   (:data (sensor-service-list-sensors-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-sensors-logs-with-http-info
-  ([namespace ] (sensor-service-sensors-logs-with-http-info namespace nil))
-  ([namespace {:keys [name trigger-name grep pod-log-optionscontainer pod-log-optionsfollow pod-log-optionsprevious pod-log-optionssince-seconds pod-log-optionssince-timeseconds pod-log-optionssince-timenanos pod-log-optionstimestamps pod-log-optionstail-lines pod-log-optionslimit-bytes pod-log-optionsinsecure-skip-tls-verify-backend ]}]
-   (call-api &quot;/api/v1/stream/sensors/{namespace}/logs&quot; :get
-             {:path-params   {&quot;namespace&quot; namespace }
-              :header-params {}
-              :query-params  {&quot;name&quot; name &quot;triggerName&quot; trigger-name &quot;grep&quot; grep &quot;podLogOptions.container&quot; pod-log-optionscontainer &quot;podLogOptions.follow&quot; pod-log-optionsfollow &quot;podLogOptions.previous&quot; pod-log-optionsprevious &quot;podLogOptions.sinceSeconds&quot; pod-log-optionssince-seconds &quot;podLogOptions.sinceTime.seconds&quot; pod-log-optionssince-timeseconds &quot;podLogOptions.sinceTime.nanos&quot; pod-log-optionssince-timenanos &quot;podLogOptions.timestamps&quot; pod-log-optionstimestamps &quot;podLogOptions.tailLines&quot; pod-log-optionstail-lines &quot;podLogOptions.limitBytes&quot; pod-log-optionslimit-bytes &quot;podLogOptions.insecureSkipTLSVerifyBackend&quot; pod-log-optionsinsecure-skip-tls-verify-backend }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-sensors-logs
-  ([namespace ] (sensor-service-sensors-logs namespace nil))
-  ([namespace optional-params]
-   (:data (sensor-service-sensors-logs-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-update-sensor-with-http-info
-  [namespace name body ]
-  (call-api &quot;/api/v1/sensors/{namespace}/{name}&quot; :put
-            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :body-param    body
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-update-sensor
-  [namespace name body ]
-  (:data (sensor-service-update-sensor-with-http-info namespace name body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-watch-sensors-with-http-info
-  ([namespace ] (sensor-service-watch-sensors-with-http-info namespace nil))
-  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
-   (call-api &quot;/api/v1/stream/sensors/{namespace}&quot; :get
-             {:path-params   {&quot;namespace&quot; namespace }
-              :header-params {}
-              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-watch-sensors
-  ([namespace ] (sensor-service-watch-sensors namespace nil))
-  ([namespace optional-params]
-   (:data (sensor-service-watch-sensors-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.event-source-service" name="argo-workflows-api.api.event-source-service"><h1 class="project-name">argo-workflows-api.api.event-source-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.event-source-service
-  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
-  (:import (java.io File)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-create-event-source-with-http-info
-  [namespace body ]
-  (call-api &quot;/api/v1/event-sources/{namespace}&quot; :post
-            {:path-params   {&quot;namespace&quot; namespace }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :body-param    body
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-create-event-source
-  [namespace body ]
-  (:data (event-source-service-create-event-source-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-delete-event-source-with-http-info
-  ([namespace name ] (event-source-service-delete-event-source-with-http-info namespace name nil))
-  ([namespace name {:keys [delete-optionsgrace-period-seconds delete-optionspreconditionsuid delete-optionspreconditionsresource-version delete-optionsorphan-dependents delete-optionspropagation-policy delete-optionsdry-run ]}]
-   (call-api &quot;/api/v1/event-sources/{namespace}/{name}&quot; :delete
-             {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
-              :header-params {}
-              :query-params  {&quot;deleteOptions.gracePeriodSeconds&quot; delete-optionsgrace-period-seconds &quot;deleteOptions.preconditions.uid&quot; delete-optionspreconditionsuid &quot;deleteOptions.preconditions.resourceVersion&quot; delete-optionspreconditionsresource-version &quot;deleteOptions.orphanDependents&quot; delete-optionsorphan-dependents &quot;deleteOptions.propagationPolicy&quot; delete-optionspropagation-policy &quot;deleteOptions.dryRun&quot; (with-collection-format delete-optionsdry-run :multi) }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-delete-event-source
-  ([namespace name ] (event-source-service-delete-event-source namespace name nil))
-  ([namespace name optional-params]
-   (:data (event-source-service-delete-event-source-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-event-sources-logs-with-http-info
-  ([namespace ] (event-source-service-event-sources-logs-with-http-info namespace nil))
-  ([namespace {:keys [name event-source-type event-name grep pod-log-optionscontainer pod-log-optionsfollow pod-log-optionsprevious pod-log-optionssince-seconds pod-log-optionssince-timeseconds pod-log-optionssince-timenanos pod-log-optionstimestamps pod-log-optionstail-lines pod-log-optionslimit-bytes pod-log-optionsinsecure-skip-tls-verify-backend ]}]
-   (call-api &quot;/api/v1/stream/event-sources/{namespace}/logs&quot; :get
-             {:path-params   {&quot;namespace&quot; namespace }
-              :header-params {}
-              :query-params  {&quot;name&quot; name &quot;eventSourceType&quot; event-source-type &quot;eventName&quot; event-name &quot;grep&quot; grep &quot;podLogOptions.container&quot; pod-log-optionscontainer &quot;podLogOptions.follow&quot; pod-log-optionsfollow &quot;podLogOptions.previous&quot; pod-log-optionsprevious &quot;podLogOptions.sinceSeconds&quot; pod-log-optionssince-seconds &quot;podLogOptions.sinceTime.seconds&quot; pod-log-optionssince-timeseconds &quot;podLogOptions.sinceTime.nanos&quot; pod-log-optionssince-timenanos &quot;podLogOptions.timestamps&quot; pod-log-optionstimestamps &quot;podLogOptions.tailLines&quot; pod-log-optionstail-lines &quot;podLogOptions.limitBytes&quot; pod-log-optionslimit-bytes &quot;podLogOptions.insecureSkipTLSVerifyBackend&quot; pod-log-optionsinsecure-skip-tls-verify-backend }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-event-sources-logs
-  ([namespace ] (event-source-service-event-sources-logs namespace nil))
-  ([namespace optional-params]
-   (:data (event-source-service-event-sources-logs-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-get-event-source-with-http-info
-  [namespace name ]
-  (call-api &quot;/api/v1/event-sources/{namespace}/{name}&quot; :get
-            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-get-event-source
-  [namespace name ]
-  (:data (event-source-service-get-event-source-with-http-info namespace name)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-list-event-sources-with-http-info
-  ([namespace ] (event-source-service-list-event-sources-with-http-info namespace nil))
-  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
-   (call-api &quot;/api/v1/event-sources/{namespace}&quot; :get
-             {:path-params   {&quot;namespace&quot; namespace }
-              :header-params {}
-              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-list-event-sources
-  ([namespace ] (event-source-service-list-event-sources namespace nil))
-  ([namespace optional-params]
-   (:data (event-source-service-list-event-sources-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-update-event-source-with-http-info
-  [namespace name body ]
-  (call-api &quot;/api/v1/event-sources/{namespace}/{name}&quot; :put
-            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :body-param    body
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-update-event-source
-  [namespace name body ]
-  (:data (event-source-service-update-event-source-with-http-info namespace name body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-watch-event-sources-with-http-info
-  ([namespace ] (event-source-service-watch-event-sources-with-http-info namespace nil))
-  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
-   (call-api &quot;/api/v1/stream/event-sources/{namespace}&quot; :get
-             {:path-params   {&quot;namespace&quot; namespace }
-              :header-params {}
-              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
-              :form-params   {}
-              :content-types [&quot;application/json&quot;]
-              :accepts       [&quot;application/json&quot;]
-              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-watch-event-sources
-  ([namespace ] (event-source-service-watch-event-sources namespace nil))
-  ([namespace optional-params]
-   (:data (event-source-service-watch-event-sources-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.event-service" name="argo-workflows-api.api.event-service"><h1 class="project-name">argo-workflows-api.api.event-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+     (cron/cron-workflow-service-resume-cron-workflow ns name options))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.event-service" name="argo-workflows-api.api.event-service"><h1 class="project-name">argo-workflows-api.api.event-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.event-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))</pre></td></tr><tr><td class="docs">
@@ -3493,7 +3288,97 @@ net.brehaut.ClojureTools = (function (SH) {
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(defn event-service-receive-event
   [namespace discriminator body ]
-  (:data (event-service-receive-event-with-http-info namespace discriminator body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.archived-workflow-service" name="argo-workflows-api.api.archived-workflow-service"><h1 class="project-name">argo-workflows-api.api.archived-workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+  (:data (event-service-receive-event-with-http-info namespace discriminator body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.cluster-workflow-template-service" name="argo-workflows-api.api.cluster-workflow-template-service"><h1 class="project-name">argo-workflows-api.api.cluster-workflow-template-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.cluster-workflow-template-service
+  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
+  (:import (java.io File)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-create-cluster-workflow-template-with-http-info
+  [body ]
+  (call-api &quot;/api/v1/cluster-workflow-templates&quot; :post
+            {:path-params   {}
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :body-param    body
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-create-cluster-workflow-template
+  [body ]
+  (:data (cluster-workflow-template-service-create-cluster-workflow-template-with-http-info body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-delete-cluster-workflow-template-with-http-info
+  ([name ] (cluster-workflow-template-service-delete-cluster-workflow-template-with-http-info name nil))
+  ([name {:keys [delete-optionsgrace-period-seconds delete-optionspreconditionsuid delete-optionspreconditionsresource-version delete-optionsorphan-dependents delete-optionspropagation-policy delete-optionsdry-run ]}]
+   (call-api &quot;/api/v1/cluster-workflow-templates/{name}&quot; :delete
+             {:path-params   {&quot;name&quot; name }
+              :header-params {}
+              :query-params  {&quot;deleteOptions.gracePeriodSeconds&quot; delete-optionsgrace-period-seconds &quot;deleteOptions.preconditions.uid&quot; delete-optionspreconditionsuid &quot;deleteOptions.preconditions.resourceVersion&quot; delete-optionspreconditionsresource-version &quot;deleteOptions.orphanDependents&quot; delete-optionsorphan-dependents &quot;deleteOptions.propagationPolicy&quot; delete-optionspropagation-policy &quot;deleteOptions.dryRun&quot; (with-collection-format delete-optionsdry-run :multi) }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-delete-cluster-workflow-template
+  ([name ] (cluster-workflow-template-service-delete-cluster-workflow-template name nil))
+  ([name optional-params]
+   (:data (cluster-workflow-template-service-delete-cluster-workflow-template-with-http-info name optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-get-cluster-workflow-template-with-http-info
+  ([name ] (cluster-workflow-template-service-get-cluster-workflow-template-with-http-info name nil))
+  ([name {:keys [get-optionsresource-version ]}]
+   (call-api &quot;/api/v1/cluster-workflow-templates/{name}&quot; :get
+             {:path-params   {&quot;name&quot; name }
+              :header-params {}
+              :query-params  {&quot;getOptions.resourceVersion&quot; get-optionsresource-version }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-get-cluster-workflow-template
+  ([name ] (cluster-workflow-template-service-get-cluster-workflow-template name nil))
+  ([name optional-params]
+   (:data (cluster-workflow-template-service-get-cluster-workflow-template-with-http-info name optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-lint-cluster-workflow-template-with-http-info
+  [body ]
+  (call-api &quot;/api/v1/cluster-workflow-templates/lint&quot; :post
+            {:path-params   {}
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :body-param    body
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-lint-cluster-workflow-template
+  [body ]
+  (:data (cluster-workflow-template-service-lint-cluster-workflow-template-with-http-info body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-list-cluster-workflow-templates-with-http-info
+  ([] (cluster-workflow-template-service-list-cluster-workflow-templates-with-http-info nil))
+  ([{:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
+   (call-api &quot;/api/v1/cluster-workflow-templates&quot; :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-list-cluster-workflow-templates
+  ([] (cluster-workflow-template-service-list-cluster-workflow-templates nil))
+  ([optional-params]
+   (:data (cluster-workflow-template-service-list-cluster-workflow-templates-with-http-info optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-update-cluster-workflow-template-with-http-info
+  [name body ]
+  (call-api &quot;/api/v1/cluster-workflow-templates/{name}&quot; :put
+            {:path-params   {&quot;name&quot; name }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :body-param    body
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-update-cluster-workflow-template
+  [name body ]
+  (:data (cluster-workflow-template-service-update-cluster-workflow-template-with-http-info name body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.archived-workflow-service" name="argo-workflows-api.api.archived-workflow-service"><h1 class="project-name">argo-workflows-api.api.archived-workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.archived-workflow-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))</pre></td></tr><tr><td class="docs">
@@ -3599,13 +3484,81 @@ net.brehaut.ClojureTools = (function (SH) {
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(defn archived-workflow-service-retry-archived-workflow
   [uid body ]
-  (:data (archived-workflow-service-retry-archived-workflow-with-http-info uid body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.workflow-template-service" name="argo-workflows-api.api.workflow-template-service"><h1 class="project-name">argo-workflows-api.api.workflow-template-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.workflow-template-service
+  (:data (archived-workflow-service-retry-archived-workflow-with-http-info uid body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.artifact-service" name="argo-workflows-api.api.artifact-service"><h1 class="project-name">argo-workflows-api.api.artifact-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.artifact-service
+  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
+  (:import (java.io File)))</pre></td></tr><tr><td class="docs"><p>Get an artifact.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-artifact-file-with-http-info
+  [namespace id-discriminator id node-id artifact-name artifact-discriminator ]
+  (call-api &quot;/artifact-files/{namespace}/{idDiscriminator}/{id}/{nodeId}/{artifactDiscriminator}/{artifactName}&quot; :get
+            {:path-params   {&quot;namespace&quot; namespace &quot;idDiscriminator&quot; id-discriminator &quot;id&quot; id &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name &quot;artifactDiscriminator&quot; artifact-discriminator }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an artifact.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-artifact-file
+  [namespace id-discriminator id node-id artifact-name artifact-discriminator ]
+  (:data (artifact-service-get-artifact-file-with-http-info namespace id-discriminator id node-id artifact-name artifact-discriminator)))</pre></td></tr><tr><td class="docs"><p>Get an input artifact.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact-with-http-info
+  [namespace name node-id artifact-name ]
+  (call-api &quot;/input-artifacts/{namespace}/{name}/{nodeId}/{artifactName}&quot; :get
+            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an input artifact.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact
+  [namespace name node-id artifact-name ]
+  (:data (artifact-service-get-input-artifact-with-http-info namespace name node-id artifact-name)))</pre></td></tr><tr><td class="docs"><p>Get an input artifact by UID.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact-by-uid-with-http-info
+  [uid node-id artifact-name ]
+  (call-api &quot;/input-artifacts-by-uid/{uid}/{nodeId}/{artifactName}&quot; :get
+            {:path-params   {&quot;uid&quot; uid &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an input artifact by UID.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact-by-uid
+  [uid node-id artifact-name ]
+  (:data (artifact-service-get-input-artifact-by-uid-with-http-info uid node-id artifact-name)))</pre></td></tr><tr><td class="docs"><p>Get an output artifact.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact-with-http-info
+  [namespace name node-id artifact-name ]
+  (call-api &quot;/artifacts/{namespace}/{name}/{nodeId}/{artifactName}&quot; :get
+            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an output artifact.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact
+  [namespace name node-id artifact-name ]
+  (:data (artifact-service-get-output-artifact-with-http-info namespace name node-id artifact-name)))</pre></td></tr><tr><td class="docs"><p>Get an output artifact by UID.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact-by-uid-with-http-info
+  [uid node-id artifact-name ]
+  (call-api &quot;/artifacts-by-uid/{uid}/{nodeId}/{artifactName}&quot; :get
+            {:path-params   {&quot;uid&quot; uid &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an output artifact by UID.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact-by-uid
+  [uid node-id artifact-name ]
+  (:data (artifact-service-get-output-artifact-by-uid-with-http-info uid node-id artifact-name)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.sensor-service" name="argo-workflows-api.api.sensor-service"><h1 class="project-name">argo-workflows-api.api.sensor-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.sensor-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-create-workflow-template-with-http-info
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-create-sensor-with-http-info
   [namespace body ]
-  (call-api &quot;/api/v1/workflow-templates/{namespace}&quot; :post
+  (call-api &quot;/api/v1/sensors/{namespace}&quot; :post
             {:path-params   {&quot;namespace&quot; namespace }
              :header-params {}
              :query-params  {}
@@ -3614,13 +3567,13 @@ net.brehaut.ClojureTools = (function (SH) {
              :content-types [&quot;application/json&quot;]
              :accepts       [&quot;application/json&quot;]
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-create-workflow-template
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-create-sensor
   [namespace body ]
-  (:data (workflow-template-service-create-workflow-template-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-delete-workflow-template-with-http-info
-  ([namespace name ] (workflow-template-service-delete-workflow-template-with-http-info namespace name nil))
+  (:data (sensor-service-create-sensor-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-delete-sensor-with-http-info
+  ([namespace name ] (sensor-service-delete-sensor-with-http-info namespace name nil))
   ([namespace name {:keys [delete-optionsgrace-period-seconds delete-optionspreconditionsuid delete-optionspreconditionsresource-version delete-optionsorphan-dependents delete-optionspropagation-policy delete-optionsdry-run ]}]
-   (call-api &quot;/api/v1/workflow-templates/{namespace}/{name}&quot; :delete
+   (call-api &quot;/api/v1/sensors/{namespace}/{name}&quot; :delete
              {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
               :header-params {}
               :query-params  {&quot;deleteOptions.gracePeriodSeconds&quot; delete-optionsgrace-period-seconds &quot;deleteOptions.preconditions.uid&quot; delete-optionspreconditionsuid &quot;deleteOptions.preconditions.resourceVersion&quot; delete-optionspreconditionsresource-version &quot;deleteOptions.orphanDependents&quot; delete-optionsorphan-dependents &quot;deleteOptions.propagationPolicy&quot; delete-optionspropagation-policy &quot;deleteOptions.dryRun&quot; (with-collection-format delete-optionsdry-run :multi) }
@@ -3628,14 +3581,14 @@ net.brehaut.ClojureTools = (function (SH) {
               :content-types [&quot;application/json&quot;]
               :accepts       [&quot;application/json&quot;]
               :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-delete-workflow-template
-  ([namespace name ] (workflow-template-service-delete-workflow-template namespace name nil))
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-delete-sensor
+  ([namespace name ] (sensor-service-delete-sensor namespace name nil))
   ([namespace name optional-params]
-   (:data (workflow-template-service-delete-workflow-template-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-get-workflow-template-with-http-info
-  ([namespace name ] (workflow-template-service-get-workflow-template-with-http-info namespace name nil))
+   (:data (sensor-service-delete-sensor-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-get-sensor-with-http-info
+  ([namespace name ] (sensor-service-get-sensor-with-http-info namespace name nil))
   ([namespace name {:keys [get-optionsresource-version ]}]
-   (call-api &quot;/api/v1/workflow-templates/{namespace}/{name}&quot; :get
+   (call-api &quot;/api/v1/sensors/{namespace}/{name}&quot; :get
              {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
               :header-params {}
               :query-params  {&quot;getOptions.resourceVersion&quot; get-optionsresource-version }
@@ -3643,28 +3596,14 @@ net.brehaut.ClojureTools = (function (SH) {
               :content-types [&quot;application/json&quot;]
               :accepts       [&quot;application/json&quot;]
               :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-get-workflow-template
-  ([namespace name ] (workflow-template-service-get-workflow-template namespace name nil))
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-get-sensor
+  ([namespace name ] (sensor-service-get-sensor namespace name nil))
   ([namespace name optional-params]
-   (:data (workflow-template-service-get-workflow-template-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-lint-workflow-template-with-http-info
-  [namespace body ]
-  (call-api &quot;/api/v1/workflow-templates/{namespace}/lint&quot; :post
-            {:path-params   {&quot;namespace&quot; namespace }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :body-param    body
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-lint-workflow-template
-  [namespace body ]
-  (:data (workflow-template-service-lint-workflow-template-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-list-workflow-templates-with-http-info
-  ([namespace ] (workflow-template-service-list-workflow-templates-with-http-info namespace nil))
+   (:data (sensor-service-get-sensor-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-list-sensors-with-http-info
+  ([namespace ] (sensor-service-list-sensors-with-http-info namespace nil))
   ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
-   (call-api &quot;/api/v1/workflow-templates/{namespace}&quot; :get
+   (call-api &quot;/api/v1/sensors/{namespace}&quot; :get
              {:path-params   {&quot;namespace&quot; namespace }
               :header-params {}
               :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
@@ -3672,13 +3611,28 @@ net.brehaut.ClojureTools = (function (SH) {
               :content-types [&quot;application/json&quot;]
               :accepts       [&quot;application/json&quot;]
               :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-list-workflow-templates
-  ([namespace ] (workflow-template-service-list-workflow-templates namespace nil))
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-list-sensors
+  ([namespace ] (sensor-service-list-sensors namespace nil))
   ([namespace optional-params]
-   (:data (workflow-template-service-list-workflow-templates-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-update-workflow-template-with-http-info
+   (:data (sensor-service-list-sensors-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-sensors-logs-with-http-info
+  ([namespace ] (sensor-service-sensors-logs-with-http-info namespace nil))
+  ([namespace {:keys [name trigger-name grep pod-log-optionscontainer pod-log-optionsfollow pod-log-optionsprevious pod-log-optionssince-seconds pod-log-optionssince-timeseconds pod-log-optionssince-timenanos pod-log-optionstimestamps pod-log-optionstail-lines pod-log-optionslimit-bytes pod-log-optionsinsecure-skip-tls-verify-backend ]}]
+   (call-api &quot;/api/v1/stream/sensors/{namespace}/logs&quot; :get
+             {:path-params   {&quot;namespace&quot; namespace }
+              :header-params {}
+              :query-params  {&quot;name&quot; name &quot;triggerName&quot; trigger-name &quot;grep&quot; grep &quot;podLogOptions.container&quot; pod-log-optionscontainer &quot;podLogOptions.follow&quot; pod-log-optionsfollow &quot;podLogOptions.previous&quot; pod-log-optionsprevious &quot;podLogOptions.sinceSeconds&quot; pod-log-optionssince-seconds &quot;podLogOptions.sinceTime.seconds&quot; pod-log-optionssince-timeseconds &quot;podLogOptions.sinceTime.nanos&quot; pod-log-optionssince-timenanos &quot;podLogOptions.timestamps&quot; pod-log-optionstimestamps &quot;podLogOptions.tailLines&quot; pod-log-optionstail-lines &quot;podLogOptions.limitBytes&quot; pod-log-optionslimit-bytes &quot;podLogOptions.insecureSkipTLSVerifyBackend&quot; pod-log-optionsinsecure-skip-tls-verify-backend }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-sensors-logs
+  ([namespace ] (sensor-service-sensors-logs namespace nil))
+  ([namespace optional-params]
+   (:data (sensor-service-sensors-logs-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-update-sensor-with-http-info
   [namespace name body ]
-  (call-api &quot;/api/v1/workflow-templates/{namespace}/{name}&quot; :put
+  (call-api &quot;/api/v1/sensors/{namespace}/{name}&quot; :put
             {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
              :header-params {}
              :query-params  {}
@@ -3687,9 +3641,80 @@ net.brehaut.ClojureTools = (function (SH) {
              :content-types [&quot;application/json&quot;]
              :accepts       [&quot;application/json&quot;]
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-update-workflow-template
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-update-sensor
   [namespace name body ]
-  (:data (workflow-template-service-update-workflow-template-with-http-info namespace name body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.workflow-service" name="argo-workflows-api.api.workflow-service"><h1 class="project-name">argo-workflows-api.api.workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+  (:data (sensor-service-update-sensor-with-http-info namespace name body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-watch-sensors-with-http-info
+  ([namespace ] (sensor-service-watch-sensors-with-http-info namespace nil))
+  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
+   (call-api &quot;/api/v1/stream/sensors/{namespace}&quot; :get
+             {:path-params   {&quot;namespace&quot; namespace }
+              :header-params {}
+              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn sensor-service-watch-sensors
+  ([namespace ] (sensor-service-watch-sensors namespace nil))
+  ([namespace optional-params]
+   (:data (sensor-service-watch-sensors-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.info-service" name="argo-workflows-api.api.info-service"><h1 class="project-name">argo-workflows-api.api.info-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.info-service
+  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
+  (:import (java.io File)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-collect-event-with-http-info
+  [body ]
+  (call-api &quot;/api/v1/tracking/event&quot; :post
+            {:path-params   {}
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :body-param    body
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-collect-event
+  [body ]
+  (:data (info-service-collect-event-with-http-info body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-info-with-http-info
+  []
+  (call-api &quot;/api/v1/info&quot; :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-info
+  []
+  (:data (info-service-get-info-with-http-info)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-user-info-with-http-info
+  []
+  (call-api &quot;/api/v1/userinfo&quot; :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-user-info
+  []
+  (:data (info-service-get-user-info-with-http-info)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-version-with-http-info
+  []
+  (call-api &quot;/api/v1/version&quot; :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-version
+  []
+  (:data (info-service-get-version-with-http-info)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.workflow-service" name="argo-workflows-api.api.workflow-service"><h1 class="project-name">argo-workflows-api.api.workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.workflow-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))</pre></td></tr><tr><td class="docs">
@@ -3937,7 +3962,111 @@ net.brehaut.ClojureTools = (function (SH) {
 </td><td class="codes"><pre class="brush: clojure">(defn workflow-service-workflow-logs
   ([namespace name ] (workflow-service-workflow-logs namespace name nil))
   ([namespace name optional-params]
-   (:data (workflow-service-workflow-logs-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.cron-workflow-service" name="argo-workflows-api.api.cron-workflow-service"><h1 class="project-name">argo-workflows-api.api.cron-workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+   (:data (workflow-service-workflow-logs-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.event-source-service" name="argo-workflows-api.api.event-source-service"><h1 class="project-name">argo-workflows-api.api.event-source-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.event-source-service
+  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
+  (:import (java.io File)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-create-event-source-with-http-info
+  [namespace body ]
+  (call-api &quot;/api/v1/event-sources/{namespace}&quot; :post
+            {:path-params   {&quot;namespace&quot; namespace }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :body-param    body
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-create-event-source
+  [namespace body ]
+  (:data (event-source-service-create-event-source-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-delete-event-source-with-http-info
+  ([namespace name ] (event-source-service-delete-event-source-with-http-info namespace name nil))
+  ([namespace name {:keys [delete-optionsgrace-period-seconds delete-optionspreconditionsuid delete-optionspreconditionsresource-version delete-optionsorphan-dependents delete-optionspropagation-policy delete-optionsdry-run ]}]
+   (call-api &quot;/api/v1/event-sources/{namespace}/{name}&quot; :delete
+             {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
+              :header-params {}
+              :query-params  {&quot;deleteOptions.gracePeriodSeconds&quot; delete-optionsgrace-period-seconds &quot;deleteOptions.preconditions.uid&quot; delete-optionspreconditionsuid &quot;deleteOptions.preconditions.resourceVersion&quot; delete-optionspreconditionsresource-version &quot;deleteOptions.orphanDependents&quot; delete-optionsorphan-dependents &quot;deleteOptions.propagationPolicy&quot; delete-optionspropagation-policy &quot;deleteOptions.dryRun&quot; (with-collection-format delete-optionsdry-run :multi) }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-delete-event-source
+  ([namespace name ] (event-source-service-delete-event-source namespace name nil))
+  ([namespace name optional-params]
+   (:data (event-source-service-delete-event-source-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-event-sources-logs-with-http-info
+  ([namespace ] (event-source-service-event-sources-logs-with-http-info namespace nil))
+  ([namespace {:keys [name event-source-type event-name grep pod-log-optionscontainer pod-log-optionsfollow pod-log-optionsprevious pod-log-optionssince-seconds pod-log-optionssince-timeseconds pod-log-optionssince-timenanos pod-log-optionstimestamps pod-log-optionstail-lines pod-log-optionslimit-bytes pod-log-optionsinsecure-skip-tls-verify-backend ]}]
+   (call-api &quot;/api/v1/stream/event-sources/{namespace}/logs&quot; :get
+             {:path-params   {&quot;namespace&quot; namespace }
+              :header-params {}
+              :query-params  {&quot;name&quot; name &quot;eventSourceType&quot; event-source-type &quot;eventName&quot; event-name &quot;grep&quot; grep &quot;podLogOptions.container&quot; pod-log-optionscontainer &quot;podLogOptions.follow&quot; pod-log-optionsfollow &quot;podLogOptions.previous&quot; pod-log-optionsprevious &quot;podLogOptions.sinceSeconds&quot; pod-log-optionssince-seconds &quot;podLogOptions.sinceTime.seconds&quot; pod-log-optionssince-timeseconds &quot;podLogOptions.sinceTime.nanos&quot; pod-log-optionssince-timenanos &quot;podLogOptions.timestamps&quot; pod-log-optionstimestamps &quot;podLogOptions.tailLines&quot; pod-log-optionstail-lines &quot;podLogOptions.limitBytes&quot; pod-log-optionslimit-bytes &quot;podLogOptions.insecureSkipTLSVerifyBackend&quot; pod-log-optionsinsecure-skip-tls-verify-backend }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-event-sources-logs
+  ([namespace ] (event-source-service-event-sources-logs namespace nil))
+  ([namespace optional-params]
+   (:data (event-source-service-event-sources-logs-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-get-event-source-with-http-info
+  [namespace name ]
+  (call-api &quot;/api/v1/event-sources/{namespace}/{name}&quot; :get
+            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-get-event-source
+  [namespace name ]
+  (:data (event-source-service-get-event-source-with-http-info namespace name)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-list-event-sources-with-http-info
+  ([namespace ] (event-source-service-list-event-sources-with-http-info namespace nil))
+  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
+   (call-api &quot;/api/v1/event-sources/{namespace}&quot; :get
+             {:path-params   {&quot;namespace&quot; namespace }
+              :header-params {}
+              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-list-event-sources
+  ([namespace ] (event-source-service-list-event-sources namespace nil))
+  ([namespace optional-params]
+   (:data (event-source-service-list-event-sources-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-update-event-source-with-http-info
+  [namespace name body ]
+  (call-api &quot;/api/v1/event-sources/{namespace}/{name}&quot; :put
+            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :body-param    body
+             :content-types [&quot;application/json&quot;]
+             :accepts       [&quot;application/json&quot;]
+             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-update-event-source
+  [namespace name body ]
+  (:data (event-source-service-update-event-source-with-http-info namespace name body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-watch-event-sources-with-http-info
+  ([namespace ] (event-source-service-watch-event-sources-with-http-info namespace nil))
+  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
+   (call-api &quot;/api/v1/stream/event-sources/{namespace}&quot; :get
+             {:path-params   {&quot;namespace&quot; namespace }
+              :header-params {}
+              :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
+              :form-params   {}
+              :content-types [&quot;application/json&quot;]
+              :accepts       [&quot;application/json&quot;]
+              :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn event-source-service-watch-event-sources
+  ([namespace ] (event-source-service-watch-event-sources namespace nil))
+  ([namespace optional-params]
+   (:data (event-source-service-watch-event-sources-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.cron-workflow-service" name="argo-workflows-api.api.cron-workflow-service"><h1 class="project-name">argo-workflows-api.api.cron-workflow-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.cron-workflow-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))</pre></td></tr><tr><td class="docs">
@@ -4055,14 +4184,14 @@ net.brehaut.ClojureTools = (function (SH) {
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(defn cron-workflow-service-update-cron-workflow
   [namespace name body ]
-  (:data (cron-workflow-service-update-cron-workflow-with-http-info namespace name body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.cluster-workflow-template-service" name="argo-workflows-api.api.cluster-workflow-template-service"><h1 class="project-name">argo-workflows-api.api.cluster-workflow-template-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.cluster-workflow-template-service
+  (:data (cron-workflow-service-update-cron-workflow-with-http-info namespace name body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.workflow-template-service" name="argo-workflows-api.api.workflow-template-service"><h1 class="project-name">argo-workflows-api.api.workflow-template-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.workflow-template-service
   (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-create-cluster-workflow-template-with-http-info
-  [body ]
-  (call-api &quot;/api/v1/cluster-workflow-templates&quot; :post
-            {:path-params   {}
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-create-workflow-template-with-http-info
+  [namespace body ]
+  (call-api &quot;/api/v1/workflow-templates/{namespace}&quot; :post
+            {:path-params   {&quot;namespace&quot; namespace }
              :header-params {}
              :query-params  {}
              :form-params   {}
@@ -4070,43 +4199,43 @@ net.brehaut.ClojureTools = (function (SH) {
              :content-types [&quot;application/json&quot;]
              :accepts       [&quot;application/json&quot;]
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-create-cluster-workflow-template
-  [body ]
-  (:data (cluster-workflow-template-service-create-cluster-workflow-template-with-http-info body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-delete-cluster-workflow-template-with-http-info
-  ([name ] (cluster-workflow-template-service-delete-cluster-workflow-template-with-http-info name nil))
-  ([name {:keys [delete-optionsgrace-period-seconds delete-optionspreconditionsuid delete-optionspreconditionsresource-version delete-optionsorphan-dependents delete-optionspropagation-policy delete-optionsdry-run ]}]
-   (call-api &quot;/api/v1/cluster-workflow-templates/{name}&quot; :delete
-             {:path-params   {&quot;name&quot; name }
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-create-workflow-template
+  [namespace body ]
+  (:data (workflow-template-service-create-workflow-template-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-delete-workflow-template-with-http-info
+  ([namespace name ] (workflow-template-service-delete-workflow-template-with-http-info namespace name nil))
+  ([namespace name {:keys [delete-optionsgrace-period-seconds delete-optionspreconditionsuid delete-optionspreconditionsresource-version delete-optionsorphan-dependents delete-optionspropagation-policy delete-optionsdry-run ]}]
+   (call-api &quot;/api/v1/workflow-templates/{namespace}/{name}&quot; :delete
+             {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
               :header-params {}
               :query-params  {&quot;deleteOptions.gracePeriodSeconds&quot; delete-optionsgrace-period-seconds &quot;deleteOptions.preconditions.uid&quot; delete-optionspreconditionsuid &quot;deleteOptions.preconditions.resourceVersion&quot; delete-optionspreconditionsresource-version &quot;deleteOptions.orphanDependents&quot; delete-optionsorphan-dependents &quot;deleteOptions.propagationPolicy&quot; delete-optionspropagation-policy &quot;deleteOptions.dryRun&quot; (with-collection-format delete-optionsdry-run :multi) }
               :form-params   {}
               :content-types [&quot;application/json&quot;]
               :accepts       [&quot;application/json&quot;]
               :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-delete-cluster-workflow-template
-  ([name ] (cluster-workflow-template-service-delete-cluster-workflow-template name nil))
-  ([name optional-params]
-   (:data (cluster-workflow-template-service-delete-cluster-workflow-template-with-http-info name optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-get-cluster-workflow-template-with-http-info
-  ([name ] (cluster-workflow-template-service-get-cluster-workflow-template-with-http-info name nil))
-  ([name {:keys [get-optionsresource-version ]}]
-   (call-api &quot;/api/v1/cluster-workflow-templates/{name}&quot; :get
-             {:path-params   {&quot;name&quot; name }
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-delete-workflow-template
+  ([namespace name ] (workflow-template-service-delete-workflow-template namespace name nil))
+  ([namespace name optional-params]
+   (:data (workflow-template-service-delete-workflow-template-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-get-workflow-template-with-http-info
+  ([namespace name ] (workflow-template-service-get-workflow-template-with-http-info namespace name nil))
+  ([namespace name {:keys [get-optionsresource-version ]}]
+   (call-api &quot;/api/v1/workflow-templates/{namespace}/{name}&quot; :get
+             {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
               :header-params {}
               :query-params  {&quot;getOptions.resourceVersion&quot; get-optionsresource-version }
               :form-params   {}
               :content-types [&quot;application/json&quot;]
               :accepts       [&quot;application/json&quot;]
               :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-get-cluster-workflow-template
-  ([name ] (cluster-workflow-template-service-get-cluster-workflow-template name nil))
-  ([name optional-params]
-   (:data (cluster-workflow-template-service-get-cluster-workflow-template-with-http-info name optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-lint-cluster-workflow-template-with-http-info
-  [body ]
-  (call-api &quot;/api/v1/cluster-workflow-templates/lint&quot; :post
-            {:path-params   {}
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-get-workflow-template
+  ([namespace name ] (workflow-template-service-get-workflow-template namespace name nil))
+  ([namespace name optional-params]
+   (:data (workflow-template-service-get-workflow-template-with-http-info namespace name optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-lint-workflow-template-with-http-info
+  [namespace body ]
+  (call-api &quot;/api/v1/workflow-templates/{namespace}/lint&quot; :post
+            {:path-params   {&quot;namespace&quot; namespace }
              :header-params {}
              :query-params  {}
              :form-params   {}
@@ -4114,28 +4243,28 @@ net.brehaut.ClojureTools = (function (SH) {
              :content-types [&quot;application/json&quot;]
              :accepts       [&quot;application/json&quot;]
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-lint-cluster-workflow-template
-  [body ]
-  (:data (cluster-workflow-template-service-lint-cluster-workflow-template-with-http-info body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-list-cluster-workflow-templates-with-http-info
-  ([] (cluster-workflow-template-service-list-cluster-workflow-templates-with-http-info nil))
-  ([{:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
-   (call-api &quot;/api/v1/cluster-workflow-templates&quot; :get
-             {:path-params   {}
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-lint-workflow-template
+  [namespace body ]
+  (:data (workflow-template-service-lint-workflow-template-with-http-info namespace body)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-list-workflow-templates-with-http-info
+  ([namespace ] (workflow-template-service-list-workflow-templates-with-http-info namespace nil))
+  ([namespace {:keys [list-optionslabel-selector list-optionsfield-selector list-optionswatch list-optionsallow-watch-bookmarks list-optionsresource-version list-optionsresource-version-match list-optionstimeout-seconds list-optionslimit list-optionscontinue ]}]
+   (call-api &quot;/api/v1/workflow-templates/{namespace}&quot; :get
+             {:path-params   {&quot;namespace&quot; namespace }
               :header-params {}
               :query-params  {&quot;listOptions.labelSelector&quot; list-optionslabel-selector &quot;listOptions.fieldSelector&quot; list-optionsfield-selector &quot;listOptions.watch&quot; list-optionswatch &quot;listOptions.allowWatchBookmarks&quot; list-optionsallow-watch-bookmarks &quot;listOptions.resourceVersion&quot; list-optionsresource-version &quot;listOptions.resourceVersionMatch&quot; list-optionsresource-version-match &quot;listOptions.timeoutSeconds&quot; list-optionstimeout-seconds &quot;listOptions.limit&quot; list-optionslimit &quot;listOptions.continue&quot; list-optionscontinue }
               :form-params   {}
               :content-types [&quot;application/json&quot;]
               :accepts       [&quot;application/json&quot;]
               :auth-names    [&quot;BearerToken&quot;]})))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-list-cluster-workflow-templates
-  ([] (cluster-workflow-template-service-list-cluster-workflow-templates nil))
-  ([optional-params]
-   (:data (cluster-workflow-template-service-list-cluster-workflow-templates-with-http-info optional-params))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-update-cluster-workflow-template-with-http-info
-  [name body ]
-  (call-api &quot;/api/v1/cluster-workflow-templates/{name}&quot; :put
-            {:path-params   {&quot;name&quot; name }
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-list-workflow-templates
+  ([namespace ] (workflow-template-service-list-workflow-templates namespace nil))
+  ([namespace optional-params]
+   (:data (workflow-template-service-list-workflow-templates-with-http-info namespace optional-params))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-update-workflow-template-with-http-info
+  [namespace name body ]
+  (call-api &quot;/api/v1/workflow-templates/{namespace}/{name}&quot; :put
+            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name }
              :header-params {}
              :query-params  {}
              :form-params   {}
@@ -4143,133 +4272,9 @@ net.brehaut.ClojureTools = (function (SH) {
              :content-types [&quot;application/json&quot;]
              :accepts       [&quot;application/json&quot;]
              :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn cluster-workflow-template-service-update-cluster-workflow-template
-  [name body ]
-  (:data (cluster-workflow-template-service-update-cluster-workflow-template-with-http-info name body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.info-service" name="argo-workflows-api.api.info-service"><h1 class="project-name">argo-workflows-api.api.info-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.info-service
-  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
-  (:import (java.io File)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-collect-event-with-http-info
-  [body ]
-  (call-api &quot;/api/v1/tracking/event&quot; :post
-            {:path-params   {}
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :body-param    body
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-collect-event
-  [body ]
-  (:data (info-service-collect-event-with-http-info body)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-info-with-http-info
-  []
-  (call-api &quot;/api/v1/info&quot; :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-info
-  []
-  (:data (info-service-get-info-with-http-info)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-user-info-with-http-info
-  []
-  (call-api &quot;/api/v1/userinfo&quot; :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-user-info
-  []
-  (:data (info-service-get-user-info-with-http-info)))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-version-with-http-info
-  []
-  (call-api &quot;/api/v1/version&quot; :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn info-service-get-version
-  []
-  (:data (info-service-get-version-with-http-info)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.api.artifact-service" name="argo-workflows-api.api.artifact-service"><h1 class="project-name">argo-workflows-api.api.artifact-service</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.api.artifact-service
-  (:require [argo-workflows-api.core :refer [call-api check-required-params with-collection-format]])
-  (:import (java.io File)))</pre></td></tr><tr><td class="docs"><p>Get an artifact.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-artifact-file-with-http-info
-  [namespace id-discriminator id node-id artifact-name artifact-discriminator ]
-  (call-api &quot;/artifact-files/{namespace}/{idDiscriminator}/{id}/{nodeId}/{artifactDiscriminator}/{artifactName}&quot; :get
-            {:path-params   {&quot;namespace&quot; namespace &quot;idDiscriminator&quot; id-discriminator &quot;id&quot; id &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name &quot;artifactDiscriminator&quot; artifact-discriminator }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an artifact.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-artifact-file
-  [namespace id-discriminator id node-id artifact-name artifact-discriminator ]
-  (:data (artifact-service-get-artifact-file-with-http-info namespace id-discriminator id node-id artifact-name artifact-discriminator)))</pre></td></tr><tr><td class="docs"><p>Get an input artifact.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact-with-http-info
-  [namespace name node-id artifact-name ]
-  (call-api &quot;/input-artifacts/{namespace}/{name}/{nodeId}/{artifactName}&quot; :get
-            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an input artifact.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact
-  [namespace name node-id artifact-name ]
-  (:data (artifact-service-get-input-artifact-with-http-info namespace name node-id artifact-name)))</pre></td></tr><tr><td class="docs"><p>Get an input artifact by UID.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact-by-uid-with-http-info
-  [uid node-id artifact-name ]
-  (call-api &quot;/input-artifacts-by-uid/{uid}/{nodeId}/{artifactName}&quot; :get
-            {:path-params   {&quot;uid&quot; uid &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an input artifact by UID.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-input-artifact-by-uid
-  [uid node-id artifact-name ]
-  (:data (artifact-service-get-input-artifact-by-uid-with-http-info uid node-id artifact-name)))</pre></td></tr><tr><td class="docs"><p>Get an output artifact.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact-with-http-info
-  [namespace name node-id artifact-name ]
-  (call-api &quot;/artifacts/{namespace}/{name}/{nodeId}/{artifactName}&quot; :get
-            {:path-params   {&quot;namespace&quot; namespace &quot;name&quot; name &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an output artifact.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact
-  [namespace name node-id artifact-name ]
-  (:data (artifact-service-get-output-artifact-with-http-info namespace name node-id artifact-name)))</pre></td></tr><tr><td class="docs"><p>Get an output artifact by UID.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact-by-uid-with-http-info
-  [uid node-id artifact-name ]
-  (call-api &quot;/artifacts-by-uid/{uid}/{nodeId}/{artifactName}&quot; :get
-            {:path-params   {&quot;uid&quot; uid &quot;nodeId&quot; node-id &quot;artifactName&quot; artifact-name }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types [&quot;application/json&quot;]
-             :accepts       [&quot;application/json&quot;]
-             :auth-names    [&quot;BearerToken&quot;]}))</pre></td></tr><tr><td class="docs"><p>Get an output artifact by UID.</p>
-</td><td class="codes"><pre class="brush: clojure">(defn artifact-service-get-output-artifact-by-uid
-  [uid node-id artifact-name ]
-  (:data (artifact-service-get-output-artifact-by-uid-with-http-info uid node-id artifact-name)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.core" name="argo-workflows-api.core"><h1 class="project-name">argo-workflows-api.core</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn workflow-template-service-update-workflow-template
+  [namespace name body ]
+  (:data (workflow-template-service-update-workflow-template-with-http-info namespace name body)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#argo-workflows-api.core" name="argo-workflows-api.core"><h1 class="project-name">argo-workflows-api.core</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns argo-workflows-api.core
   (:require [cheshire.core :refer [generate-string parse-string]]
             [clojure.string :as str]
@@ -4472,7 +4477,7 @@ net.brehaut.ClojureTools = (function (SH) {
       (let [{:keys [body]} (some-&gt; e ex-data)
             data (if body (parse-string body keyword)
                      {:error (.getMessage e)})]
-        (throw (ex-info &quot;Argo Workflow Error&quot; data))))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_argoj.specs">argoj.specs</li><li class="floating-toc-li" id="floating-toc_argoj.api">argoj.api</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.core">argo-workflows-api.core</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+        (throw (ex-info &quot;Argo Workflow Error&quot; data))))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_argoj.specs">argoj.specs</li><li class="floating-toc-li" id="floating-toc_argoj.api">argoj.api</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-service">argo-workflows-api.api.event-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cluster-workflow-template-service">argo-workflows-api.api.cluster-workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.archived-workflow-service">argo-workflows-api.api.archived-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.artifact-service">argo-workflows-api.api.artifact-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.sensor-service">argo-workflows-api.api.sensor-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.info-service">argo-workflows-api.api.info-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-service">argo-workflows-api.api.workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.event-source-service">argo-workflows-api.api.event-source-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.cron-workflow-service">argo-workflows-api.api.cron-workflow-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.api.workflow-template-service">argo-workflows-api.api.workflow-template-service</li><li class="floating-toc-li" id="floating-toc_argo-workflows-api.core">argo-workflows-api.core</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
