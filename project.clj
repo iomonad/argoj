@@ -12,12 +12,13 @@
                                       :password :env/clojars_password
                                       :sign-releases false}]]
   :plugins [[lein-marginalia "0.9.1"]]
-  :dependencies [[org.clojure/clojure       "1.11.1"]
-                 [clj-http                  "3.12.3"]
-                 [cheshire                  "5.11.0"]
-                 [prismatic/schema          "1.4.1"]]
-  :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "1.4.2"]]
+  :dependencies [[org.clojure/clojure "1.12.4"]
+                 [clj-http "3.13.1"]
+                 [cheshire "6.1.0"]
+                 [prismatic/schema "1.4.1"]]
+  :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "1.5.1"]]
                    :source-paths   ["dev"]
-                   :resource-paths ["dev-resources"]}
+                   :resource-paths ["dev-resources"]
+                   :plugins [[lein-ancient "1.0.0-RC3"]]}
              :repl-options {:init-ns user}}
   :global-vars {*warn-on-reflection* true})
